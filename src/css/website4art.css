@@ -1,0 +1,19 @@
+@import './config.css';
+@import './commons.css';
+@import './links+icons.css';
+@import './gallery.css';
+@import './bio.css';
+@import './contact.css';
+
+/* 
+  Issues:
+  - Carousel on all touch-screens:
+    - dislay none for left/right controls
+    - Allow swipe for left/right (also on non-touch)
+  - Rewrite Carousel
+    - Add lazysizes (https://github.com/aFarkas/lazysizes/tree/master)
+    - Build Carousel as one page with images
+    - Scroll to picked image when called
+    - Decide to show horizontally/vertically
+    - Use lazysizes and pattern with blurry static image 
+*/

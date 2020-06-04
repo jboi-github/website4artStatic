@@ -1,0 +1,34 @@
+/*
+ * Work with icons (add missing, replace, only when hover, etc.)
+ */
+
+/* put blank between icon and link */
+.linkExternalIcon::after, .linkInternalIcon::after, .fa-paper-plane::after, .fa-eraser::after {
+  content: " ";
+  white-space: pre;
+}
+
+/* Show icon to indicate external target only when hover over link */
+.linkExternalIconTargetBlank {
+  font-size: x-small;
+}
+@media screen and (hover: hover) {
+  .linkExternalIconTargetBlank {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  .linkExternal:hover .linkExternalIconTargetBlank {
+    opacity: 1;
+  }
+}
+
+/* Links (external and internal) will use normal color when not hovered. When hovered they turn darkgrey */
+.linkExternal, .linkInternal {
+  text-decoration: none;
+  color: inherit;
+}
+@media screen and (hover: hover) {
+  .linkExternal:hover, .linkInternal:hover {
+    color: var(--w4a-text-secondary);
+  }
+}

@@ -1,0 +1,138 @@
+/*
+* Format Contact
+*/
+
+/* Give form contrast background */
+.contactForm {
+    background-color: var(--w4a-background-secondary);
+    display: inline-grid;
+    margin: auto;
+    padding: 0 1vw;
+    grid-column-gap: 1vw;
+    row-gap: 1vh;
+}
+
+/* Place elements in form */
+@media screen and (orientation: landscape) {
+.contactForm {
+    grid-template-columns: 29.5vw 29vw 20.5vw;
+    grid-template-rows: 1vh 5vh 5vh 5vh 3.5vh 5vh 3.5vh 1vh;
+}
+.contactFormName {
+    grid-area: 2 / 1 / span 1 / span 1;
+}
+.contactFormEmail {
+    grid-area: 2 / 2 / span 1 / span 1;
+}
+.contactFormMessage {
+    grid-area: 3 / 1 / span 3 / span 2;
+}
+.contactFormPrivacy {
+    grid-area: 6 / 1 / span 1 / span 1;
+}
+.contactFormMandatory {
+    grid-area: 6 / 2 / span 1 / span 1;
+}
+.contactFormSubmit {
+    grid-area: 7 / 1 / span 1 / span 2;
+}
+.contactFormReset {
+    grid-area: 5 / 3 / span 1 / span 1;
+}
+.contactFormResult {
+    grid-area: 6 / 3 / span 2 / span 1;
+}
+.contactFormCaptcha {
+    grid-area: 2 / 3 / span 3 / span 1;
+    grid-template-columns: 20vw;
+    grid-template-rows: 7.5vh auto;  
+}
+}
+@media screen and (orientation: portrait) {
+.contactForm {
+    grid-template-columns: 44.5vw 44.5vw;
+    grid-template-rows: 1vh 3.5vh 3.5vh 10vh 3.5vh 10vh 3.5vh 3.5vh 1vh;
+}
+.contactFormName {
+    grid-area: 2 / 1 / span 1 / span 2;
+}
+.contactFormEmail {
+    grid-area: 3 / 1 / span 1 / span 2;
+}
+.contactFormMessage {
+    grid-area: 4 / 1 / span 1 / span 2;
+}
+.contactFormPrivacy {
+    grid-area: 5 / 1 / span 1 / span 1;
+}
+.contactFormMandatory {
+    grid-area: 5 / 2 / span 1 / span 1;
+}
+.contactFormSubmit {
+    grid-area: 7 / 1 / span 1 / span 2;
+}
+.contactFormReset {
+    display: none;
+}
+.contactFormResult {
+    grid-area: 8 / 1 / span 1 / span 2;
+}
+.contactFormCaptcha {
+    grid-area: 6 / 1 / span 1 / span 2;
+    grid-template-columns: 90vw;
+    grid-template-rows: 4vh auto;  
+}
+}
+
+/* formatting and positioning within Captcha */
+.contactFormCaptcha {
+padding: 1vh 0.25vw;
+margin: auto;
+display: inline-grid;
+row-gap: 0.5vh;
+background-color: var(--w4a-accent);
+}
+.contactFormCaptchaImage {
+grid-area: 1 / 1 / span 1 / span 1;
+margin: auto;
+max-height: 100%;
+max-width: 100%;
+object-fit: contain;
+}
+.contactFormCaptchaControl {
+grid-area: 2 / 1 / span 1 / span 1;
+z-index: 1;
+display: inline-flex;
+flex-direction: row;
+}
+.contactFormCaptchaCode {
+flex-grow: 1;
+}
+
+/* center result message */
+.contactFormResult {
+margin: auto;
+font-size: x-small;
+}
+
+/* Make checkbox more visible */
+.contactFormPrivacyCheckbox {
+vertical-align: middle;
+font-size: xx-large;
+}
+.contactFormMandatory {
+text-align: right;
+}
+.contactFormPrivacy, .contactFormMandatory {
+font-size: x-small;
+}
+
+/* spinning loader, shown while getting data from server */
+.contactWait {
+border: 1vh solid var(--w4a-border);
+border-radius: 50%;
+border-top: 1vh solid var(--w4a-accent);
+width: 5vh;
+height: 5vh;
+animation: spin 1s linear infinite;
+}

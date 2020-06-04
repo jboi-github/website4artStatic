@@ -1,0 +1,25 @@
+/*
+* Configuration, based in variables
+*/
+:root {
+  /* Colors */
+  --w4a-background-primary: white;
+  --w4a-text-primary: black;
+  --w4a-background-secondary: whitesmoke;
+  --w4a-text-secondary: dimgrey;
+  --w4a-accent: pink;
+  --w4a-border: grey;
+  --w4a-background-hovered: rgba(255, 255, 255, 0.75);
+  --w4a-font-family: 'Raleway', sans-serif;
+}
+
+/* Base font */
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+/* Make icons invisible and use // instead for all links in navigation-element */
+.linkExternalIcon, .linkInternalIcon, .fa-paper-plane, .fa-eraser {
+  display: none;
+}
+nav .linkInternal::before, nav .linkExternal::before, form .contactFormSubmit::before, form .contactFormReset::before {
+  content: "//";
+}

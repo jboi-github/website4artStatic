@@ -1,0 +1,93 @@
+name: deploy
+
+#
+# This workflow deploys the static portion of website4art to the Azure storage after a successful push to any branch.
+#
+
+on: push
+
+#
+# Setup a secret in Github (Repository -> Settings -> Secret -> new secret)
+# with the name AZURE_STORAGE_CONNECTION_STRING and value of the connection
+# string of your Azure storage (portal.azure.com -> your storage -> Access Keys)
+#
+env:
+  AZURE_FUNCTIONAPP_NAME: website4art3api
+  exif: Image-ExifTool-11.98
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 'Checkout GitHub Action'
+      uses: actions/checkout@v2
+
+    - name: 'Setup environment on docker for Node(v10), Azure-CLI and Azure Functions'
+      shell: bash
+      run: |
+        docker build --tag website4art-python-images - <<-EOF
+          FROM python:latest
+
+          RUN apt-get update
+          RUN pip install --no-cache-dir Pillow
+
+          RUN curl --output ${{ env.exif }}.tar.gz https://exiftool.org/${{ env.exif }}.tar.gz
+          RUN gzip -dc ${{ env.exif }}.tar.gz | tar -xf -
+          RUN chmod +x ./${{ env.exif }}/exiftool
+
+        EOF
+
+        docker build --tag website4art-node-azure - <<-EOF
+          FROM node:10
+
+          RUN apt-get update
+          RUN apt-get install apt-transport-https
+
+          RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
+        EOF
+
+        docker images
+
+        docker run \
+          --rm \
+          --interactive \
+          --volume ${PWD}:/usr/api \
+          --workdir /usr/api \
+          website4art-python-images \
+          /bin/bash -x <<-EOF
+            # Remove non-originals if exist
+            rm -r ./public/gallery/[0-9]*
+
+            # Drop metadata from images
+            /${{ env.exif }}/exiftool -r -ext "jpg" -overwrite_original -all= ./public/gallery
+
+            # Resize images
+            python < ./scripts/resize.py
+
+            # Add metadata to images
+            /${{ env.exif }}/exiftool -r -ext "jpg" -overwrite_original -tagsfromfile ./public/config/metadata.xmp -xmp:all ./public/gallery
+        EOF     
+
+        docker run \
+          --rm \
+          --interactive \
+          --volume ${PWD}:/usr/api \
+          --workdir /usr/api \
+          website4art-node-azure \
+          /bin/bash -x <<-EOF
+            # Clean build directory
+            rm -r build
+  
+            # Node solve dependencies and build react
+            npm install --only=production
+            npm run build --if-present
+
+            # Upload to Azure
+            cd build
+            az storage blob upload-batch \
+              --destination stage \
+              --destination-path `git branch --show-current` \
+              --source . \
+              --connection-string "\${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}"
+        EOF
+
