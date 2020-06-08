@@ -87,7 +87,7 @@ jobs:
             az storage blob upload-batch \
               --destination \\\$web \
               --destination-path `git branch --show-current` \
-              --source . \
+              --source .  \
               --connection-string "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}"
         EOF
 
