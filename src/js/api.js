@@ -2,7 +2,7 @@
     API clients
  */
 // const baseHost = "http://localhost:7071"
-const baseHost = 'https://website4art3api.azurewebsites.net'
+const baseHost  = 'https://website4art3api.azurewebsites.net'
 
 const querystring = require('querystring')
 
