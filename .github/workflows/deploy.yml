@@ -83,10 +83,10 @@ jobs:
             npm run build --if-present
 
             # Get connection string form branch
-            node <<-NODE
+            node > /tmp/cs <<-NODE
               const js = ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
               console.log(js[`git branch --show-current`])
-            NODE > /tmp/$$
+            NODE
         
             # Upload to Azure
             cd build
@@ -94,6 +94,6 @@ jobs:
               --destination \\\$web \
               --destination-path `git branch --show-current` \
               --source .  \
-              --connection-string "`cat /tmp/$$`"
+              --connection-string "`cat /tmp/cs`"
         EOF
 
