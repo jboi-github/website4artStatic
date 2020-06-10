@@ -71,7 +71,7 @@ jobs:
         # Get conn-string
         node > .connString <<-NODE
           const js = ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
-          console.log(js[`git branch --show-current`])
+          console.log(js["`git branch --show-current`"])
         NODE
 
         docker run \
