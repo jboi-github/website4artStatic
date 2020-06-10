@@ -68,6 +68,12 @@ jobs:
             /${{ env.exif }}/exiftool -r -ext "jpg" -overwrite_original -tagsfromfile ./public/config/metadata.xmp -xmp:all ./public/gallery
         EOF
 
+        # Get conn-string
+        node > .connString <<-NODE
+          const js = ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
+          console.log(js[`git branch --show-current`])
+        NODE
+
         docker run \
           --rm \
           --interactive \
@@ -82,18 +88,12 @@ jobs:
             npm install --only=production
             npm run build --if-present
 
-            # Get connection string form branch
-            node > /tmp/cs <<-NODE
-              const js = ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
-              console.log(js[`git branch --show-current`])
-            NODE
-        
             # Upload to Azure
             cd build
             az storage blob upload-batch \
               --destination \\\$web \
               --destination-path `git branch --show-current` \
               --source .  \
-              --connection-string "`cat /tmp/cs`"
+              --connection-string "`cat .connString`"
         EOF
 
