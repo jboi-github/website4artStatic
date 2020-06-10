@@ -82,12 +82,18 @@ jobs:
             npm install --only=production
             npm run build --if-present
 
+            # Get connection string form branch
+            node <<-NODE
+              const js = ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
+              console.log(js[`git branch --show-current`])
+            NODE > /tmp/$$
+        
             # Upload to Azure
             cd build
             az storage blob upload-batch \
               --destination \\\$web \
               --destination-path `git branch --show-current` \
               --source .  \
-              --connection-string "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}"
+              --connection-string "`cat /tmp/$$`"
         EOF
 
