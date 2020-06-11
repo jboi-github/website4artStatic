@@ -92,7 +92,6 @@ jobs:
             cd build
             az storage blob upload-batch \
               --destination \\\$web \
-              --destination-path `git branch --show-current` \
               --source .  \
               --connection-string "`cat .connString`"
         EOF
