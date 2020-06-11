@@ -3,7 +3,6 @@
  */
 // const baseHost = "http://localhost:7071"
 const baseHost = 'https://w4aapi.azurewebsites.net'
-
 const querystring = require('querystring')
 
 /* Captcha Handling */
