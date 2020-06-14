@@ -1,28 +1,32 @@
 {
     "site": "https://w4amaster.z6.web.core.windows.net",
     "impressum": {
-        "name": "Jürgen Boiselle",
-        "umsatzSteuerNr": "meine nummer",
+        "name": "Till Knapp",
+        "umsatzSteuerNr": "43/122/03818",
         "wirtschaftsId": "---",
-        "instagram": "https://www.instagram.com/jurgenboiselle/"
+        "instagram": ""
     },
     "bio": {
         "born": "",
         "positions": [
             {
-                "date": "*1994",
-                "description": "Lebt & arbeitet in Hamburg"
+                "date": "*12.08.1995",
+                "description": "in Nürtingen"
             },
             {
-                "date": "2014-2016",
-                "description": "Mathematikstudium"
+                "date": "",
+                "description": "Studium an der HfbK Hamburg"
             },
             {
-                "date": "seit 2017",
-                "description": "Kunststudium an der HfbK bei Anselm Reyle"
+                "date": "2017-2018",
+                "description": "Grundklasse Achim Hoops"
+            },
+            {
+                "date": "2018-heute",
+                "description": "Bachelor of Fine Arts Klasse Werner Büttner"
             }
         ],
-        "current": [
+        "XcurrentX": [
             {
                 "name": "Der River",
                 "place":"@Spinnerei Leipzig",
@@ -31,7 +35,7 @@
                 "link": "http://www.spinnerei.de/news-details/events/der-river.html"
             }
         ],
-        "upcoming": [
+        "XupcomingX": [
             {
                 "name": "Jung - Figürlich - Gutaussehend",
                 "place": "@Fabrik der Künste, Hamburg",
@@ -42,17 +46,32 @@
         ],
         "exhibitions": [
             {
+                "date": "2020",
+                "description": "Jung- Figürlich- Gutaussehend, Gruppenausstellung, Fabrik der Künste, Hamburg",
+                "link": "https://www.fabrikderkuenste.de/veranstaltungen.html"
+            },
+            {
+                "date": "2020",
+                "description": "Jahresausstellung HFBK, Gruppenausstellung, Hamburg",
+                "link": ""
+            },
+            {
+                "date": "2020",
+                "description": "Die kleinste Galerie der Welt, Gruppenausstellung, Hamburg",
+                "link": ""
+            },
+            {
                 "date": "2019",
-                "description": "gemEINSAM, G, xpon-art, Hamburg",
-                "link": "http://xpon-art.de"
+                "description": "Jahresausstellung HFBK, Gruppenausstellung, Hamburg",
+                "link": ""
             },
             {
                 "date": "2018",
-                "description": "Isola Alicudi, G, Westwerk, Hamburg",
-                "link": "https://www.westwerk.org/isola-alicudi.html"
+                "description": "Art About Art, Gruppenausstellung, Bunkerhill Galerie, Hamburg",
+                "link": ""
             }
         ],
-        "quotes": [
+        "XquotesX": [
             {
                 "quote": "Alles super gut!",
                 "source": "hamburg-magazin.de",

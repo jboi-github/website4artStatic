@@ -6,18 +6,21 @@ This package was generated with [RealFaviconGenerator](https://realfavicongenera
 
 To install this package:
 
-Extract this package in <code>&lt;web site&gt;/icons/</code>. If your site is <code>http://www.example.com</code>, you should be able to access a file named <code>http://www.example.com/icons/favicon.ico</code>.
+Extract this package in <code>https://website4artstorage.blob.core.windows.net/public/tillknapp/icons/</code>. For example, you should be able to access a file named <code>https://website4artstorage.blob.core.windows.net/public/tillknapp/icons/favicon.ico</code>.
 
 Insert the following code in the `head` section of your pages:
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png?v=8jM5oPYK85">
-    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png?v=8jM5oPYK85">
-    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png?v=8jM5oPYK85">
-    <link rel="manifest" href="/icons/site.webmanifest?v=8jM5oPYK85">
-    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg?v=8jM5oPYK85" color="#ffffff">
-    <link rel="shortcut icon" href="/icons/favicon.ico?v=8jM5oPYK85">
-    <meta name="msapplication-TileColor" content="#ff0000">
-    <meta name="msapplication-config" content="/icons/browserconfig.xml?v=8jM5oPYK85">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://website4artstorage.blob.core.windows.net/public/tillknapp/icons/apple-touch-icon.png?v=NmPdQwjGP7">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://website4artstorage.blob.core.windows.net/public/tillknapp/icons/favicon-32x32.png?v=NmPdQwjGP7">
+    <link rel="icon" type="image/png" sizes="194x194" href="https://website4artstorage.blob.core.windows.net/public/tillknapp/icons/favicon-194x194.png?v=NmPdQwjGP7">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://website4artstorage.blob.core.windows.net/public/tillknapp/icons/android-chrome-192x192.png?v=NmPdQwjGP7">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://website4artstorage.blob.core.windows.net/public/tillknapp/icons/favicon-16x16.png?v=NmPdQwjGP7">
+    <link rel="manifest" href="https://website4artstorage.blob.core.windows.net/public/tillknapp/icons/site.webmanifest?v=NmPdQwjGP7">
+    <link rel="mask-icon" href="https://website4artstorage.blob.core.windows.net/public/tillknapp/icons/safari-pinned-tab.svg?v=NmPdQwjGP7" color="#5bbad5">
+    <link rel="shortcut icon" href="https://website4artstorage.blob.core.windows.net/public/tillknapp/icons/favicon.ico?v=NmPdQwjGP7">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="https://website4artstorage.blob.core.windows.net/public/tillknapp/icons/mstile-144x144.png?v=NmPdQwjGP7">
+    <meta name="msapplication-config" content="https://website4artstorage.blob.core.windows.net/public/tillknapp/icons/browserconfig.xml?v=NmPdQwjGP7">
     <meta name="theme-color" content="#ffffff">
 
 *Optional* - Check your favicon with the [favicon checker](https://realfavicongenerator.net/favicon_checker)
