@@ -85,7 +85,8 @@ jobs:
             rm -r build
   
             # Node solve dependencies and build react
-            npm install --only=production
+            npm install
+            npm run sitemap
             npm run build --if-present
 
             # Upload to Azure
