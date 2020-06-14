@@ -7,15 +7,15 @@
     "prop-types": "^15.7.2",
     "react": "latest",
     "react-dom": "latest",
-    "react-router-dom": "latest",
-    "react-scripts": "latest"
+    "react-router-dom": "latest"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint --fix ./src/js"
+    "lint": "eslint --fix ./src/js",
+    "sitemap": "babel-node ./scripts/sitemap-generator.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -38,6 +38,12 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.20.0",
-    "eslint-plugin-standard": "^4.0.1"
+    "eslint-plugin-standard": "^4.0.1",
+    "react-scripts": "latest",
+    "react-router-sitemap": "latest",
+    "babel-cli": "latest",
+    "babel-preset-es2015": "latest",
+    "babel-preset-react": "latest",
+    "babel-register": "latest"
   }
 }
