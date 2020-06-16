@@ -29,6 +29,14 @@ function Website4art () {
       <Route path="/contact" exact component={W4aContact} />
       <Route path="/impressum" exact component={W4aImpressum} />
       <Route path="/privacy" exact component={W4aPrivacy} />
+
+      {/* Compatibility routes for Googles search results */}
+      <Route path="/Home/Zoomed:picture" component={W4aGallery} />
+      <Route path="/Home/BioExhibitions" exact component={W4aBio} />
+      <Route path="/Contact/Contact" exact component={W4aContact} />
+      <Route path="/Home/Impressum" exact component={W4aImpressum} />
+      <Route path="/Home/Privacy" exact component={W4aPrivacy} />
+
       <W4aFooter
         name={profile.impressum.name}
         instagram={profile.impressum.instagram}
