@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Route, Redirect } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 import '../css/website4art.css'
 
@@ -23,13 +23,6 @@ function Website4art () {
   return (
     <div className="website4art">
       <W4aHeader name={profile.impressum.name} />
-
-      {/* Compatibility routes for Googles search results */}
-      <Redirect from="/Home/Zoomed/" to="/" />
-      <Redirect from="/Home/BioExhibitions/" to="/bio/" />
-      <Redirect from="/Contact/Contact/" to="/contact/" />
-      <Redirect from="/Home/Impressum/" to="/impressum/" />
-      <Redirect from="/Home/Privacy/" to="/privacy/" />
 
       <Route path="/" exact component={W4aGallery} />
       <Route path="/gallery" exact component={W4aGallery} />
