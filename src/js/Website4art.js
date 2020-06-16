@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom'
 
 import '../css/website4art.css'
 
@@ -23,19 +23,20 @@ function Website4art () {
   return (
     <div className="website4art">
       <W4aHeader name={profile.impressum.name} />
+
+      {/* Compatibility routes for Googles search results */}
+      <Redirect from="/Home/Zoomed/" to="/" />
+      <Redirect from="/Home/BioExhibitions/" to="/bio/" />
+      <Redirect from="/Contact/Contact/" to="/contact/" />
+      <Redirect from="/Home/Impressum/" to="/impressum/" />
+      <Redirect from="/Home/Privacy/" to="/privacy/" />
+
       <Route path="/" exact component={W4aGallery} />
       <Route path="/gallery" exact component={W4aGallery} />
       <Route path="/bio" exact component={W4aBio} />
       <Route path="/contact" exact component={W4aContact} />
       <Route path="/impressum" exact component={W4aImpressum} />
       <Route path="/privacy" exact component={W4aPrivacy} />
-
-      {/* Compatibility routes for Googles search results */}
-      <Route path="/Home/Zoomed:picture" component={W4aGallery} />
-      <Route path="/Home/BioExhibitions" exact component={W4aBio} />
-      <Route path="/Contact/Contact" exact component={W4aContact} />
-      <Route path="/Home/Impressum" exact component={W4aImpressum} />
-      <Route path="/Home/Privacy" exact component={W4aPrivacy} />
 
       <W4aFooter
         name={profile.impressum.name}
