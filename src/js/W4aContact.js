@@ -73,7 +73,7 @@ function W4aContact () {
         // Captcha fields
       }
       <div className="contactFormCaptcha">
-        <img src={captcha.captcha.img} alt="" id="captchaImage" className="contactFormCaptchaImage" />
+        <img src={captcha.captcha.img} alt="" id="captchaImage" draggable="false" className="contactFormCaptchaImage" />
         <input type="hidden" name="expires" value={captcha.captcha.hash.expires} />
         <input type="hidden" name="squashed" value={captcha.captcha.hash.squashed} />
         <div className="contactFormCaptchaControl">
