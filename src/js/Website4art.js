@@ -23,14 +23,12 @@ function Website4art () {
   return (
     <div className="website4art">
       <W4aHeader name={profile.impressum.name} />
-
       <Route path="/" exact component={W4aGallery} />
       <Route path="/gallery" exact component={W4aGallery} />
       <Route path="/bio" exact component={W4aBio} />
       <Route path="/contact" exact component={W4aContact} />
       <Route path="/impressum" exact component={W4aImpressum} />
       <Route path="/privacy" exact component={W4aPrivacy} />
-
       <W4aFooter
         name={profile.impressum.name}
         instagram={profile.impressum.instagram}
