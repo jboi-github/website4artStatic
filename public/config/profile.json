@@ -26,13 +26,13 @@
                 "description": "Bachelor of Fine Arts Klasse Werner Büttner"
             }
         ],
-        "XcurrentX": [
+        "current": [
             {
-                "name": "Der River",
-                "place":"@Spinnerei Leipzig",
-                "date": "21.2.2020 - 4.4.2020",
-                "time": "Do - Sa 12 - 16 Uhr",
-                "link": "http://www.spinnerei.de/news-details/events/der-river.html"
+                "name": "Jung - Figürlich - Gutaussehend",
+                "place": "@Fabrik der Künste, Hamburg",
+                "date": "30.6.2020 - 12.7.2020",
+                "time":"",
+                "link":"https://www.fabrikderkuenste.de/veranstaltungen.html"
             }
         ],
         "XupcomingX": [
@@ -45,11 +45,6 @@
             }
         ],
         "exhibitions": [
-            {
-                "date": "2020",
-                "description": "Jung- Figürlich- Gutaussehend, Gruppenausstellung, Fabrik der Künste, Hamburg",
-                "link": "https://www.fabrikderkuenste.de/veranstaltungen.html"
-            },
             {
                 "date": "2020",
                 "description": "Jahresausstellung HFBK, Gruppenausstellung, Hamburg",
