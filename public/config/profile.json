@@ -26,7 +26,7 @@
                 "description": "Bachelor of Fine Arts Klasse Werner Büttner"
             }
         ],
-        "current": [
+        "XcurrentX": [
             {
                 "name": "Jung - Figürlich - Gutaussehend",
                 "place": "@Fabrik der Künste, Hamburg",
@@ -45,6 +45,11 @@
             }
         ],
         "exhibitions": [
+            {
+                "date": "2020",
+                "description": "Jung - Figürlich - Gutaussehend, Fabrik der Künste, Hamburg",
+                "link": "https://www.fabrikderkuenste.de/veranstaltungen.html"
+            },
             {
                 "date": "2020",
                 "description": "Jahresausstellung HFBK, Gruppenausstellung, Hamburg",
