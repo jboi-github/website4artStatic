@@ -10,20 +10,20 @@
         "born": "",
         "positions": [
             {
-                "date": "*12.08.1995",
-                "description": "in Nürtingen"
-            },
-            {
                 "date": "",
                 "description": "Studium an der HfbK Hamburg"
+            },
+            {
+                "date": "2018-heute",
+                "description": "Bachelor of Fine Arts Klasse Werner Büttner"
             },
             {
                 "date": "2017-2018",
                 "description": "Grundklasse Achim Hoops"
             },
             {
-                "date": "2018-heute",
-                "description": "Bachelor of Fine Arts Klasse Werner Büttner"
+                "date": "*12.08.1995",
+                "description": "in Nürtingen"
             }
         ],
         "XcurrentX": [
