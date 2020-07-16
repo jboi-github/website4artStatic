@@ -22,7 +22,7 @@
                 "description": "Kunststudium an der HfbK bei Anselm Reyle"
             }
         ],
-        "current": [
+        "XcurrentX": [
             {
                 "name": "Jung - Figürlich - Gutaussehend",
                 "place": "@Fabrik der Künste, Hamburg",
@@ -34,6 +34,11 @@
         "XupcomingX": [
         ],
         "exhibitions": [
+            {
+                "description": "Jung - Figürlich - Gutaussehend, Fabrik der Künste, Hamburg",
+                "date": "2020",
+                "link": "https://www.fabrikderkuenste.de/veranstaltungen.html"
+            },
             {
                 "description": "Der River, Spinnerei Leipzig",
                 "date": "2020",
