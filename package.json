@@ -5,7 +5,9 @@
   "private": true,
   "dependencies": {
     "prop-types": "^15.7.2",
-    "react": "latest"
+    "react": "latest",
+    "react-dom": "latest",
+    "react-router-dom": "^5.2.0"
   },
   "scripts": {
     "start": "react-scripts start",

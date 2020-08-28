@@ -26,6 +26,16 @@
   text-align: center;
 }
 
+@media screen and (hover: hover) {
+  .galleryFigureCaption {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  .galleryFigureCaption:hover {
+    opacity: 1;
+  }
+}
+
 .galleryFigureCaptionTitle {
   font-size: medium;
   font-weight: lighter;
