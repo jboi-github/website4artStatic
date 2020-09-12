@@ -1,5 +1,23 @@
 [
   {
+    "full": "2020-2",
+    "square": "2020-2",
+    "title": "",
+    "year": "2020",
+    "size": "250cm x 190cm",
+    "material": "Lack, Öl",
+    "story": ""
+  },
+  {
+    "full": "2020-1",
+    "square": "2020-1",
+    "title": "",
+    "year": "2020",
+    "size": "120cm x 155cm",
+    "material": "Lack, Öl",
+    "story": ""
+  },
+  {
     "full": "2020Malerei_D",
     "square": "2020Malerei_D",
     "title": "DSC0067",
@@ -22,7 +40,7 @@
     "square": "2020Malerei_A",
     "title": "",
     "year": "2019",
-    "size": "80cm x 100cm",
+    "size": "100cm x 80cm",
     "material": "Lack auf Leinwand",
     "story": ""
   },
@@ -31,25 +49,25 @@
     "square": "2020Malerei_2",
     "title": "",
     "year": "2019",
-    "size": "60cm x 80cm",
+    "size": "80cm x 60cm",
     "material": "Lack, Öl auf Leinwand",
     "story": ""
   },
   {
-      "full": "2020Malerei_9",
-      "square": "2020Malerei_9",
-      "title": "51.272553, 15.041750",
-      "year": "2019",
-      "size": "200cm x 155cm",
-      "material": "Lack, Acryl auf Leinwand",
-      "story": ""
+    "full": "2020Malerei_9",
+    "square": "2020Malerei_9",
+    "title": "51.272553, 15.041750",
+    "year": "2019",
+    "size": "155cm x 200cm",
+    "material": "Lack, Acryl auf Leinwand",
+    "story": ""
   },
   {
     "full": "DSC02040",
     "square": "R1C1",
     "title": "Ein Fixstern im Kosmos des Süßigkeitenhimmels",
     "year": "2018",
-    "size": "140cm x 160cm",
+    "size": "160cm x 140cm",
     "material": "Acryl, Öl, Lack auf Leinwand",
     "story": ""
   },
