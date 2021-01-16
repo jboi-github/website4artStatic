@@ -5,7 +5,8 @@ import PropTypes from 'prop-types'
 
 const linksInternal = [
   { id: 1, text: 'Datenschutz', icon: 'far law-symbol', url: '/privacy' },
-  { id: 2, text: 'Impressum', icon: 'far fa-address-card', url: '/impressum' }
+  { id: 2, text: 'Impressum', icon: 'far fa-address-card', url: '/impressum' },
+  { id: 3, text: 'Impressionen', icon: 'far fa-images', url: '/impressions' }
 ]
 
 function W4aFooterCopyright ({ name }) {

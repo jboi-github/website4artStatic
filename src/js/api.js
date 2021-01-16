@@ -77,6 +77,26 @@ export function getGallerySrcSet (name, srcSet) {
     .join(', ')) || ''
 }
 
+/* Impressions Configuration */
+export const emptyImpressions = []
+export async function loadImpressions (setImpressions) {
+  const response = await fetch(`${process.env.PUBLIC_URL}/config/impressions.json`)
+  const impressions = await response.json()
+  setImpressions(impressions)
+}
+
+/* Construct filename for impressions */
+export function getImpressionsImage (name, size) {
+  return `${process.env.PUBLIC_URL}/impressions/${size}/${name}.jpg`
+}
+
+/* Construct srcset for impressions image */
+export function getImpressionsSrcSet (name, srcSet) {
+  return (srcSet && srcSet.map(
+    (src) => `${getImpressionsImage(name, src.size)} ${src.width}w`)
+    .join(', ')) || ''
+}
+
 /* Set or unset header and footer as target for scrolling */
 export function setHeaderFooterScrollTarget (isTarget) {
   const setOne = function (className, isTarget) {

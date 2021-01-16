@@ -11,6 +11,7 @@ import W4aContact from './W4aContact'
 import W4aPrivacy from './W4aPrivacy'
 import W4aImpressum from './W4aImpressum'
 import { loadProfile, emptyProfile } from './api'
+import W4aImpressions from './W4aImpressions'
 
 function Website4art () {
   const [profile, setProfile] = useState(emptyProfile)
@@ -28,6 +29,7 @@ function Website4art () {
       <Route path="/bio" exact component={W4aBio} />
       <Route path="/contact" exact component={W4aContact} />
       <Route path="/impressum" exact component={W4aImpressum} />
+      <Route path="/impressions" exact component={W4aImpressions} />
       <Route path="/privacy" exact component={W4aPrivacy} />
       <W4aFooter
         name={profile.impressum.name}

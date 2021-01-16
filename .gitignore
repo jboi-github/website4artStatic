@@ -8,6 +8,7 @@
 local.settings.json
 build/
 public/gallery/[0-9]*/
+public/impressions/[0-9]*/
 sitemap.xml
 
 ### Node ###
