@@ -60,12 +60,14 @@ jobs:
 
             # Drop metadata from images
             /${{ env.exif }}/exiftool -r -ext "jpg" -overwrite_original -all= ./public/gallery
+            /${{ env.exif }}/exiftool -r -ext "jpg" -overwrite_original -all= ./public/impressions
 
             # Resize images
             python < ./scripts/resize.py
 
             # Add metadata to images
             /${{ env.exif }}/exiftool -r -ext "jpg" -overwrite_original -tagsfromfile ./public/config/metadata.xmp -xmp:all ./public/gallery
+            /${{ env.exif }}/exiftool -r -ext "jpg" -overwrite_original -tagsfromfile ./public/config/metadata.xmp -xmp:all ./public/impressions
         EOF
 
         # Get conn-string
