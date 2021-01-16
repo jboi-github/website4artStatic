@@ -1,13 +1,13 @@
 /*
-* Gallery and Gallery-boxes including grid layout, spacing, shadow, details on hover etc
+* Impressions and Impressions-boxes including grid layout, spacing, shadow, details on hover etc
 */
 
 /* Formatting boxes*/
-.galleryFigure {
+.impressionsFigure {
   margin-bottom: 10vh;
 }
 
-.galleryFigure > .galleryFigureImage {
+.impressionsFigure > .impressionsFigureImage {
   height: 80vh;
   width: 100%;
   min-height: 0;
@@ -21,40 +21,40 @@
   */
 }
 
-.galleryFigureCaption {
+.impressionsFigureCaption {
   font-size: small;
   text-align: center;
 }
 
 @media screen and (hover: hover) {
-  .galleryFigureCaption {
+  .impressionsFigureCaption {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
   }
-  .galleryFigureCaption:hover {
+  .impressionsFigureCaption:hover {
     opacity: 1;
   }
 }
 
-.galleryFigureCaptionTitle {
+.impressionsFigureCaptionTitle {
   font-size: medium;
   font-weight: lighter;
 }
 
 /* Sizing boxes */
 /*
-.galleryFigure {
+.impressionsFigure {
   height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-.galleryFigureImage {
+.impressionsFigureImage {
   flex-grow: 1;
   flex-shrink: 1;
 }
 
-.galleryFigureCaption {
+.impressionsFigureCaption {
   flex-grow: 0;
   flex-shrink: 0;
 }
@@ -68,7 +68,7 @@ html {
 body { 
   scroll-snap-type: y mandatory;
 }
-.galleryFigure, .scrollTarget  {
+.impressionsFigure, .scrollTarget  {
   overflow: hidden;
   scroll-snap-align: center;
 }
