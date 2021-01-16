@@ -80,7 +80,11 @@
 		<image:title></image:title>
 		<image:caption>Öl auf Pappe</image:caption>
 	</image:image>
-	
+
+	<lastmod>2021-01-16</lastmod>
+	<changefreq>weekly</changefreq>
+	</url>
+	<url>
 
 	<image:image>
 		<image:loc>https://www.marieboiselle.com/impressions/800/1.jpg</image:loc>
@@ -256,7 +260,8 @@
 		<image:caption></image:caption>
 	</image:image>
 	
-
+	<lastmod>2021-01-16</lastmod>
+	<changefreq>weekly</changefreq>
 		</url>
 	</urlset>
 		
