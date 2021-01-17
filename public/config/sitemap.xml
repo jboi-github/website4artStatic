@@ -1,267 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
-			xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-		<url>
-			<loc>https://marieboiselle.com</loc>
-		
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/gallery/800/2020-2.jpg</image:loc>
-		<image:title></image:title>
-		<image:caption>Lack, Öl</image:caption>
-	</image:image>
-	
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/gallery/800/2020-1.jpg</image:loc>
-		<image:title></image:title>
-		<image:caption>Lack, Öl</image:caption>
-	</image:image>
-	
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/gallery/800/2020Malerei_D.jpg</image:loc>
-		<image:title>DSC0067</image:title>
-		<image:caption>Acryl, Lack auf Leinwand</image:caption>
-	</image:image>
-	
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/gallery/800/2020Malerei_3.jpg</image:loc>
-		<image:title>Mimi x Winnie</image:title>
-		<image:caption>Acryl, Lack, Spray, Öl auf Leinwand</image:caption>
-	</image:image>
-	
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/gallery/800/2020Malerei_A.jpg</image:loc>
-		<image:title></image:title>
-		<image:caption>Lack auf Leinwand</image:caption>
-	</image:image>
-	
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/gallery/800/2020Malerei_2.jpg</image:loc>
-		<image:title></image:title>
-		<image:caption>Lack, Öl auf Leinwand</image:caption>
-	</image:image>
-	
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/gallery/800/2020Malerei_9.jpg</image:loc>
-		<image:title>51.272553, 15.041750</image:title>
-		<image:caption>Lack, Acryl auf Leinwand</image:caption>
-	</image:image>
-	
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/gallery/800/P_MG_8377.jpg</image:loc>
-		<image:title>010100000110111101110010011 011100110111101100011011000 11011010000110100101101111</image:title>
-		<image:caption>Acryl, Lack, Binder, Öl auf Leinwand</image:caption>
-	</image:image>
-	
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/gallery/800/P_MG_8388.jpg</image:loc>
-		<image:title></image:title>
-		<image:caption>Acryl, Öl, Lack, Spray auf Leinwand und Holz</image:caption>
-	</image:image>
-	
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/gallery/800/P_MG_8386.jpg</image:loc>
-		<image:title></image:title>
-		<image:caption>Öl, Pigmente, Binder, Lack auf Leinwand und Holz</image:caption>
-	</image:image>
-	
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/gallery/800/R4C1.jpg</image:loc>
-		<image:title></image:title>
-		<image:caption>Öl auf Pappe</image:caption>
-	</image:image>
-
-	<lastmod>2021-01-16</lastmod>
-	<changefreq>weekly</changefreq>
-	</url>
-	<url>
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/impressions/800/1.jpg</image:loc>
-		<image:title></image:title>
-		<image:caption></image:caption>
-	</image:image>
-	
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/impressions/800/2.jpg</image:loc>
-		<image:title></image:title>
-		<image:caption></image:caption>
-	</image:image>
-	
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/impressions/800/3.jpg</image:loc>
-		<image:title></image:title>
-		<image:caption></image:caption>
-	</image:image>
-	
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/impressions/800/4.jpg</image:loc>
-		<image:title></image:title>
-		<image:caption></image:caption>
-	</image:image>
-	
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/impressions/800/5.jpg</image:loc>
-		<image:title></image:title>
-		<image:caption></image:caption>
-	</image:image>
-	
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/impressions/800/6.jpg</image:loc>
-		<image:title></image:title>
-		<image:caption></image:caption>
-	</image:image>
-	
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/impressions/800/7.jpg</image:loc>
-		<image:title></image:title>
-		<image:caption></image:caption>
-	</image:image>
-	
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/impressions/800/8.jpg</image:loc>
-		<image:title></image:title>
-		<image:caption></image:caption>
-	</image:image>
-	
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/impressions/800/9.jpg</image:loc>
-		<image:title></image:title>
-		<image:caption></image:caption>
-	</image:image>
-	
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/impressions/800/10.jpg</image:loc>
-		<image:title></image:title>
-		<image:caption></image:caption>
-	</image:image>
-	
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/impressions/800/11.jpg</image:loc>
-		<image:title></image:title>
-		<image:caption></image:caption>
-	</image:image>
-	
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/impressions/800/12.jpg</image:loc>
-		<image:title></image:title>
-		<image:caption></image:caption>
-	</image:image>
-	
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/impressions/800/13.jpg</image:loc>
-		<image:title></image:title>
-		<image:caption></image:caption>
-	</image:image>
-	
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/impressions/800/14.jpg</image:loc>
-		<image:title></image:title>
-		<image:caption></image:caption>
-	</image:image>
-	
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/impressions/800/15.jpg</image:loc>
-		<image:title></image:title>
-		<image:caption></image:caption>
-	</image:image>
-	
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/impressions/800/16.jpg</image:loc>
-		<image:title></image:title>
-		<image:caption></image:caption>
-	</image:image>
-	
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/impressions/800/17.jpg</image:loc>
-		<image:title></image:title>
-		<image:caption></image:caption>
-	</image:image>
-	
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/impressions/800/18.jpg</image:loc>
-		<image:title></image:title>
-		<image:caption></image:caption>
-	</image:image>
-	
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/impressions/800/19.jpg</image:loc>
-		<image:title></image:title>
-		<image:caption></image:caption>
-	</image:image>
-	
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/impressions/800/20.jpg</image:loc>
-		<image:title></image:title>
-		<image:caption></image:caption>
-	</image:image>
-	
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/impressions/800/21.jpg</image:loc>
-		<image:title></image:title>
-		<image:caption></image:caption>
-	</image:image>
-	
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/impressions/800/22.jpg</image:loc>
-		<image:title></image:title>
-		<image:caption></image:caption>
-	</image:image>
-	
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/impressions/800/23.jpg</image:loc>
-		<image:title></image:title>
-		<image:caption></image:caption>
-	</image:image>
-	
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/impressions/800/24.jpg</image:loc>
-		<image:title></image:title>
-		<image:caption></image:caption>
-	</image:image>
-	
-
-	<image:image>
-		<image:loc>https://www.marieboiselle.com/impressions/800/25.jpg</image:loc>
-		<image:title></image:title>
-		<image:caption></image:caption>
-	</image:image>
-	
-	<lastmod>2021-01-16</lastmod>
-	<changefreq>weekly</changefreq>
-		</url>
-	</urlset>
-		
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+		xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.marieboiselle.com/gallery</loc>
+    <lastmod>2021-01-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/gallery/800/2020-2.jpg</image:loc>
+      <image:caption>Lack, Öl</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/gallery/800/2020-1.jpg</image:loc>
+      <image:caption>Lack, Öl</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/gallery/800/2020Malerei_D.jpg</image:loc>
+      <image:title>DSC0067</image:title>
+      <image:caption>Acryl, Lack auf Leinwand</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/gallery/800/2020Malerei_3.jpg</image:loc>
+      <image:title>Mimi x Winnie</image:title>
+      <image:caption>Acryl, Lack, Spray, Öl auf Leinwand</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/gallery/800/2020Malerei_A.jpg</image:loc>
+      <image:caption>Lack auf Leinwand</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/gallery/800/2020Malerei_2.jpg</image:loc>
+      <image:caption>Lack, Öl auf Leinwand</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/gallery/800/2020Malerei_9.jpg</image:loc>
+      <image:title>51.272553, 15.041750</image:title>
+      <image:caption>Lack, Acryl auf Leinwand</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/gallery/800/P_MG_8377.jpg</image:loc>
+      <image:title>010100000110111101110010011 011100110111101100011011000 11011010000110100101101111</image:title>
+      <image:caption>Acryl, Lack, Binder, Öl auf Leinwand</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/gallery/800/P_MG_8388.jpg</image:loc>
+      <image:caption>Acryl, Öl, Lack, Spray auf Leinwand und Holz</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/gallery/800/P_MG_8386.jpg</image:loc>
+      <image:caption>Öl, Pigmente, Binder, Lack auf Leinwand und Holz</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/gallery/800/R4C1.jpg</image:loc>
+      <image:caption>Öl auf Pappe</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.marieboiselle.com/impressions</loc>
+    <lastmod>2021-01-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/impressions/800/1.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/impressions/800/2.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/impressions/800/3.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/impressions/800/4.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/impressions/800/5.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/impressions/800/6.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/impressions/800/7.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/impressions/800/8.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/impressions/800/9.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/impressions/800/10.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/impressions/800/11.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/impressions/800/12.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/impressions/800/13.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/impressions/800/14.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/impressions/800/15.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/impressions/800/16.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/impressions/800/17.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/impressions/800/18.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/impressions/800/19.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/impressions/800/20.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/impressions/800/21.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/impressions/800/22.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/impressions/800/23.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/impressions/800/24.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/impressions/800/25.jpg</image:loc>
+    </image:image>
+  </url>
+</urlset>
