@@ -1,3 +1,12 @@
+# HowTo
+## Deploy
+
+- Simply push the branch in question, this trigger the deployment workflow automatically. Deployment takes about 10-15 minutes
+- After deploying major changes, make sure to:
+  - `purge` the CDN on azure-portal for the chenaged endpoint
+  - check on your browser, if the new website is shown
+  - Ping Google with `https://www.google.com/ping?sitemap=https://www.<SITE>.com/config/sitemap.xml`
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/jboi-github/website4artStatic/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
