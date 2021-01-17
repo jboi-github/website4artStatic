@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+		xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.tillknapp.de/gallery</loc>
+    <lastmod>2021-01-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <image:image>
+      <image:loc>https://www.tillknapp.de/gallery/800/A1.jpg</image:loc>
+      <image:caption>Öl auf Baumwolle</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tillknapp.de/gallery/800/A.jpg</image:loc>
+      <image:caption>Öl auf Baumwolle</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tillknapp.de/gallery/800/B.jpg</image:loc>
+      <image:caption>Öl und Tinte auf Baumwolle</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tillknapp.de/gallery/800/C.jpg</image:loc>
+      <image:caption>Öl auf Baumwolle</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tillknapp.de/gallery/800/D.jpg</image:loc>
+      <image:caption>Öl auf Baumwolle</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tillknapp.de/gallery/800/E.jpg</image:loc>
+      <image:caption>Öl auf Baumwolle</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tillknapp.de/gallery/800/F.jpg</image:loc>
+      <image:caption>Öl auf Baumwolle</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tillknapp.de/gallery/800/G.jpg</image:loc>
+      <image:caption>Öl auf Baumwolle</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tillknapp.de/gallery/800/H.jpg</image:loc>
+      <image:caption>Öl auf Baumwolle</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tillknapp.de/gallery/800/I.jpg</image:loc>
+      <image:caption>Öl auf Baumwolle</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tillknapp.de/gallery/800/J.jpg</image:loc>
+      <image:caption>Öl auf Baumwolle</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tillknapp.de/gallery/800/K.jpg</image:loc>
+      <image:caption>Öl auf Baumwolle</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tillknapp.de/gallery/800/L.jpg</image:loc>
+      <image:caption>Öl auf Baumwolle</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tillknapp.de/gallery/800/M.jpg</image:loc>
+      <image:caption>Öl auf Baumwolle</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tillknapp.de/gallery/800/N.jpg</image:loc>
+      <image:caption>Öl auf Baumwolle</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tillknapp.de/gallery/800/O.jpg</image:loc>
+      <image:caption>Öl auf Baumwolle</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tillknapp.de/gallery/800/P.jpg</image:loc>
+      <image:caption>Öl auf Baumwolle</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tillknapp.de/gallery/800/S.jpg</image:loc>
+      <image:title>Hunter and Dog</image:title>
+      <image:caption>Acryl & Öl auf Leinwand</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tillknapp.de/gallery/800/T.jpg</image:loc>
+      <image:title>Hermanubis</image:title>
+      <image:caption>Acryl & Öl auf Leinwand</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tillknapp.de/gallery/800/R.jpg</image:loc>
+      <image:title>Der Sarg</image:title>
+      <image:caption>Öl auf Leinwand</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tillknapp.de/gallery/800/Q.jpg</image:loc>
+      <image:title>Die Spieler</image:title>
+      <image:caption>Öl auf Leinwand</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.tillknapp.de/impressions</loc>
+    <lastmod>2021-01-17</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+</urlset>
