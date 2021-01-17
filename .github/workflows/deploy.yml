@@ -68,6 +68,9 @@ jobs:
             # Add metadata to images
             /${{ env.exif }}/exiftool -r -ext "jpg" -overwrite_original -tagsfromfile ./public/config/metadata.xmp -xmp:all ./public/gallery
             /${{ env.exif }}/exiftool -r -ext "jpg" -overwrite_original -tagsfromfile ./public/config/metadata.xmp -xmp:all ./public/impressions
+            
+            # Create sitemap.xml
+            python < ./scripts/generate-sitemap.py > ./public/config/sitemap.xml
         EOF
 
         # Get conn-string
@@ -88,7 +91,6 @@ jobs:
   
             # Node solve dependencies and build react
             npm install
-            npm run sitemap
             npm run build --if-present
 
             # Upload to Azure
