@@ -13,7 +13,7 @@ function W4aCurrents ({ currents }) {
           {current.place}<br />
           {current.date}<br />
           {current.time && <span>{current.time}<br /></span>}
-          <W4aLinkExternal text={current.link} url={current.link}/>
+          {urrent.link && <W4aLinkExternal text={current.link} url={current.link}/>}
         </p>
       )}
     </div>
@@ -30,7 +30,7 @@ function W4aUpcomings ({ upcomings }) {
           {upcoming.place}<br />
           {upcoming.date}<br />
           {upcoming.time && <div>{upcoming.time}<br /></div>}
-          <W4aLinkExternal text={upcoming.link} url={upcoming.link}/>
+          {upcoming.link && <W4aLinkExternal text={upcoming.link} url={upcoming.link}/>}
         </p>
       )}
     </div>
@@ -63,7 +63,7 @@ function W4aExhibitions ({ exhibitions }) {
         <p className="bioExhibitionsText" key={exhibition.description}>
           <span className="bioExhibitionsDate">{exhibition.date}</span><br />
           {exhibition.description}<br />
-          <W4aLinkExternal text={exhibition.link} url={exhibition.link}/>
+          {exhibition.link && <W4aLinkExternal text={exhibition.link} url={exhibition.link}/>}
         </p>
       )}
     </div>
@@ -78,7 +78,7 @@ function W4aQuotes ({ quotes }) {
         <p className="bioQuotesText" key={quote.quote}>
           <span className="bioQuotesQuote">{quote.quote}</span><br />
           {quote.source}<br />
-          <W4aLinkExternal text={quote.link} url={quote.link}/>
+          {quote.link && <W4aLinkExternal text={quote.link} url={quote.link}/>}
         </p>
       )}
     </div>
