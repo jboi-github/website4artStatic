@@ -42,7 +42,7 @@ function W4aGalleryVideo () {
     <figure className="galleryFigure">
       <video autoplay muted className="galleryFigureImage">
         <source src={getGalleryVideo("videoocean")} type="video/mp4" />
-        Leider kann dieder Browser den Video nicht anzeigen.
+        Leider kann dieser Browser den Video nicht anzeigen.
       </video>
     </figure>
   )
@@ -55,10 +55,10 @@ function W4aGallery () {
 
   return (
     <div className="gallery">
+      <W4aGalleryVideo />
       {gallery.map((pic, index) => {
         return (<W4aGalleryPicture key={index} pic={pic} />)
       })}
-      <W4aGalleryVideo />
     </div>
   )
 }

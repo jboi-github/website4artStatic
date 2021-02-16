@@ -71,7 +71,7 @@ export function getGalleryImage (name, size) {
 }
 
 /* Construct filename for gallery video */
-export function getGalleryVideo(name) {
+export function getGalleryVideo (name) {
   return `${process.env.PUBLIC_URL}/gallery/videos/${name}.mp4`
 }
 
