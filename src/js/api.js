@@ -70,6 +70,11 @@ export function getGalleryImage (name, size) {
   return `${process.env.PUBLIC_URL}/gallery/${size}/${name}.jpg`
 }
 
+/* Construct filename for gallery video */
+export function getGalleryVideo(name) {
+  return `${process.env.PUBLIC_URL}/gallery/videos/${name}.mp4`
+}
+
 /* Construct srcset for gallery image */
 export function getGallerySrcSet (name, srcSet) {
   return (srcSet && srcSet.map(

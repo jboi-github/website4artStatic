@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { emptyGallery, loadGallery, getGalleryImage, getGallerySrcSet, setHeaderFooterScrollTarget } from './api'
+import { emptyGallery, loadGallery, getGalleryImage, getGalleryVideo, getGallerySrcSet, setHeaderFooterScrollTarget } from './api'
 import PropTypes from 'prop-types'
 
 function W4aGalleryPicture ({ pic: { full, square, title, year, size, material, story, srcSet } }) {
@@ -37,6 +37,17 @@ function W4aGalleryPicture ({ pic: { full, square, title, year, size, material, 
   )
 }
 
+function W4aGalleryVideo () {
+  return (
+    <figure className="galleryFigure">
+      <video autoplay muted className="galleryFigureImage">
+        <source src={getGalleryVideo("videoocean")} type="video/mp4" />
+        Leider kann dieder Browser den Video nicht anzeigen.
+      </video>
+    </figure>
+  )
+}
+
 function W4aGallery () {
   const [gallery, setGallery] = useState(emptyGallery)
   useEffect(() => { loadGallery(setGallery) }, []) // Run once
@@ -47,6 +58,7 @@ function W4aGallery () {
       {gallery.map((pic, index) => {
         return (<W4aGalleryPicture key={index} pic={pic} />)
       })}
+      <W4aGalleryVideo />
     </div>
   )
 }
