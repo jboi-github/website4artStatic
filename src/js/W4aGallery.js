@@ -55,12 +55,13 @@ function W4aGallery () {
 
   return (
     <div className="gallery">
-      <figure className="galleryFigure">
+      <p>Hier könnte ihr Video stehen (under construction)</p>
+      <div className="galleryFigure">
         <video autoplay muted className="galleryFigureImage">
           <source src="https://www.marieboiselle.com/gallery/videos/videoocean.mp4" type="video/mp4" />
           Leider kann dieser Browser den Video nicht anzeigen.
         </video>
-      </figure>
+      </div>
 
       {gallery.map((pic, index) => {
         return (<W4aGalleryPicture key={index} pic={pic} />)
