@@ -56,8 +56,8 @@ function W4aGallery () {
   return (
     <div className="gallery">
       <div className="galleryFigure">
-        <video autoplay muted className="galleryFigureImage">
-          <source src="https://www.marieboiselle.com/gallery/videos/videoocean.mp4" type="video/mp4" />
+        <video autoplay muted controls className="galleryFigureImage">
+          <source src="https://www.marieboiselle.com/gallery/videos/videooceanL1080p.mp4" type="video/mp4" />
           Leider kann dieser Browser den Video nicht anzeigen.
         </video>
       </div>
