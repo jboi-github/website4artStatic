@@ -55,13 +55,6 @@ function W4aGallery () {
 
   return (
     <div className="gallery">
-      <div className="galleryFigure">
-        <video autoplay muted controls className="galleryFigureImage">
-          <source src="https://www.marieboiselle.com/gallery/videos/videooceanL1080p.mp4" type="video/mp4" />
-          Leider kann dieser Browser den Video nicht anzeigen.
-        </video>
-      </div>
-
       {gallery.map((pic, index) => {
         return (<W4aGalleryPicture key={index} pic={pic} />)
       })}
