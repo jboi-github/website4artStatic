@@ -1,0 +1,1118 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "actionGroups_Application_Insights_Smart_Detection_name": {
+      "type": "String"
+    },
+    "components_w4aapi_externalid": {
+      "type": "String"
+    },
+    "profiles_w4a_name": {
+      "type": "String"
+    },
+    "serverfarms_ASP_website4art_8113_name": {
+      "type": "String"
+    },
+    "sites_w4aapi_name": {
+      "type": "String"
+    },
+    "smartdetectoralertrules_failure_anomalies___w4aapi_name": {
+      "type": "String"
+    },
+    "storageAccounts_w4ablobs_name": {
+      "type": "String"
+    },
+    "storageAccounts_w4amarie_name": {
+      "type": "String"
+    },
+    "storageAccounts_w4amaster_name": {
+      "type": "String"
+    },
+    "storageAccounts_w4atill_name": {
+      "type": "String"
+    }
+  },
+  "resources": [
+    {
+      "apiVersion": "2020-09-01",
+      "kind": "cdn",
+      "location": "Global",
+      "name": "[parameters('profiles_w4a_name')]",
+      "properties": {},
+      "sku": {
+        "name": "Standard_Microsoft"
+      },
+      "tags": {
+        "branch": "GENERIC",
+        "project": "website4art"
+      },
+      "type": "Microsoft.Cdn/profiles"
+    },
+    {
+      "apiVersion": "2019-06-01",
+      "location": "Global",
+      "name": "[parameters('actionGroups_Application_Insights_Smart_Detection_name')]",
+      "properties": {
+        "armRoleReceivers": [
+          {
+            "name": "Monitoring Contributor",
+            "roleId": "749f88d5-cbae-40b8-bcfc-e573ddc772fa",
+            "useCommonAlertSchema": true
+          },
+          {
+            "name": "Monitoring Reader",
+            "roleId": "43d0d8ad-25c7-4714-9337-8ba259a9fe05",
+            "useCommonAlertSchema": true
+          }
+        ],
+        "automationRunbookReceivers": [],
+        "azureAppPushReceivers": [],
+        "azureFunctionReceivers": [],
+        "emailReceivers": [],
+        "enabled": true,
+        "groupShortName": "SmartDetect",
+        "itsmReceivers": [],
+        "logicAppReceivers": [],
+        "smsReceivers": [],
+        "voiceReceivers": [],
+        "webhookReceivers": []
+      },
+      "tags": {
+        "project": "website4art"
+      },
+      "type": "microsoft.insights/actionGroups"
+    },
+    {
+      "apiVersion": "2021-01-01",
+      "kind": "BlockBlobStorage",
+      "location": "westeurope",
+      "name": "[parameters('storageAccounts_w4ablobs_name')]",
+      "properties": {
+        "encryption": {
+          "keySource": "Microsoft.Storage",
+          "services": {
+            "blob": {
+              "enabled": true,
+              "keyType": "Account"
+            },
+            "file": {
+              "enabled": true,
+              "keyType": "Account"
+            }
+          }
+        },
+        "networkAcls": {
+          "bypass": "AzureServices",
+          "defaultAction": "Allow",
+          "ipRules": [],
+          "virtualNetworkRules": []
+        },
+        "supportsHttpsTrafficOnly": true
+      },
+      "sku": {
+        "name": "Premium_LRS",
+        "tier": "Premium"
+      },
+      "tags": {
+        "branch": "GENERIC",
+        "project": "website4art"
+      },
+      "type": "Microsoft.Storage/storageAccounts"
+    },
+    {
+      "apiVersion": "2021-01-01",
+      "kind": "BlockBlobStorage",
+      "location": "westeurope",
+      "name": "[parameters('storageAccounts_w4amarie_name')]",
+      "properties": {
+        "encryption": {
+          "keySource": "Microsoft.Storage",
+          "services": {
+            "blob": {
+              "enabled": true,
+              "keyType": "Account"
+            },
+            "file": {
+              "enabled": true,
+              "keyType": "Account"
+            }
+          }
+        },
+        "networkAcls": {
+          "bypass": "AzureServices",
+          "defaultAction": "Allow",
+          "ipRules": [],
+          "virtualNetworkRules": []
+        },
+        "supportsHttpsTrafficOnly": true
+      },
+      "sku": {
+        "name": "Premium_LRS",
+        "tier": "Premium"
+      },
+      "tags": {
+        "branch": "marie",
+        "project": "website4art"
+      },
+      "type": "Microsoft.Storage/storageAccounts"
+    },
+    {
+      "apiVersion": "2021-01-01",
+      "kind": "BlockBlobStorage",
+      "location": "westeurope",
+      "name": "[parameters('storageAccounts_w4amaster_name')]",
+      "properties": {
+        "encryption": {
+          "keySource": "Microsoft.Storage",
+          "services": {
+            "blob": {
+              "enabled": true,
+              "keyType": "Account"
+            },
+            "file": {
+              "enabled": true,
+              "keyType": "Account"
+            }
+          }
+        },
+        "networkAcls": {
+          "bypass": "AzureServices",
+          "defaultAction": "Allow",
+          "ipRules": [],
+          "virtualNetworkRules": []
+        },
+        "supportsHttpsTrafficOnly": true
+      },
+      "sku": {
+        "name": "Premium_LRS",
+        "tier": "Premium"
+      },
+      "tags": {
+        "branch": "GENERIC",
+        "project": "website4art"
+      },
+      "type": "Microsoft.Storage/storageAccounts"
+    },
+    {
+      "apiVersion": "2021-01-01",
+      "kind": "BlockBlobStorage",
+      "location": "westeurope",
+      "name": "[parameters('storageAccounts_w4atill_name')]",
+      "properties": {
+        "encryption": {
+          "keySource": "Microsoft.Storage",
+          "services": {
+            "blob": {
+              "enabled": true,
+              "keyType": "Account"
+            },
+            "file": {
+              "enabled": true,
+              "keyType": "Account"
+            }
+          }
+        },
+        "networkAcls": {
+          "bypass": "AzureServices",
+          "defaultAction": "Allow",
+          "ipRules": [],
+          "virtualNetworkRules": []
+        },
+        "supportsHttpsTrafficOnly": true
+      },
+      "sku": {
+        "name": "Premium_LRS",
+        "tier": "Premium"
+      },
+      "tags": {
+        "branch": "till",
+        "project": "website4art"
+      },
+      "type": "Microsoft.Storage/storageAccounts"
+    },
+    {
+      "apiVersion": "2018-02-01",
+      "kind": "functionapp",
+      "location": "West Europe",
+      "name": "[parameters('serverfarms_ASP_website4art_8113_name')]",
+      "properties": {
+        "hyperV": false,
+        "isSpot": false,
+        "isXenon": false,
+        "maximumElasticWorkerCount": 1,
+        "perSiteScaling": false,
+        "reserved": true,
+        "targetWorkerCount": 0,
+        "targetWorkerSizeId": 0
+      },
+      "sku": {
+        "capacity": 0,
+        "family": "Y",
+        "name": "Y1",
+        "size": "Y1",
+        "tier": "Dynamic"
+      },
+      "tags": {
+        "branch": "GENERIC",
+        "project": "website4art"
+      },
+      "type": "Microsoft.Web/serverfarms"
+    },
+    {
+      "apiVersion": "2019-06-01",
+      "dependsOn": [
+        "[resourceId('microsoft.insights/actionGroups', parameters('actionGroups_Application_Insights_Smart_Detection_name'))]"
+      ],
+      "location": "global",
+      "name": "[parameters('smartdetectoralertrules_failure_anomalies___w4aapi_name')]",
+      "properties": {
+        "actionGroups": {
+          "groupIds": [
+            "[resourceId('microsoft.insights/actionGroups', parameters('actionGroups_Application_Insights_Smart_Detection_name'))]"
+          ]
+        },
+        "description": "Failure Anomalies notifies you of an unusual rise in the rate of failed HTTP requests or dependency calls.",
+        "detector": {
+          "description": "Detects if your application experiences an abnormal rise in the rate of HTTP requests or dependency calls that are reported as failed. The anomaly detection uses machine learning algorithms and occurs in near real time, therefore there's no need to define a frequency for this signal.<br/></br/>To help you triage and diagnose the problem, an analysis of the characteristics of the failures and related telemetry is provided with the detection. This feature works for any app, hosted in the cloud or on your own servers, that generates request or dependency telemetry - for example, if you have a worker role that calls <a class=\"ext-smartDetecor-link\" href=\\\"https://docs.microsoft.com/azure/application-insights/app-insights-api-custom-events-metrics#trackrequest\\\" target=\\\"_blank\\\">TrackRequest()</a> or <a class=\"ext-smartDetecor-link\" href=\\\"https://docs.microsoft.com/azure/application-insights/app-insights-api-custom-events-metrics#trackdependency\\\" target=\\\"_blank\\\">TrackDependency()</a>.<br/><br/><a class=\"ext-smartDetecor-link\" href=\\\"https://docs.microsoft.com/azure/azure-monitor/app/proactive-failure-diagnostics\\\" target=\\\"_blank\\\">Learn more about Failure Anomalies</a><br><br><b>A note about your data privacy:</b><br><br>The service is entirely automatic and only you can see these notifications. <a class=\\\"ext-smartDetecor-link\\\" href=\\\"https://docs.microsoft.com/en-us/azure/azure-monitor/app/data-retention-privacy\\\" target=\\\"_blank\\\">Read more about data privacy</a><br><br>Smart Alerts conditions can't be edited or added for now.",
+          "id": "FailureAnomaliesDetector",
+          "name": "Failure Anomalies",
+          "supportedResourceTypes": [
+            "ApplicationInsights"
+          ]
+        },
+        "frequency": "PT1M",
+        "scope": [
+          "[parameters('components_w4aapi_externalid')]"
+        ],
+        "severity": "Sev3",
+        "state": "Enabled"
+      },
+      "tags": {
+        "project": "website4art"
+      },
+      "type": "microsoft.alertsmanagement/smartdetectoralertrules"
+    },
+    {
+      "apiVersion": "2020-09-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Cdn/profiles', parameters('profiles_w4a_name'))]"
+      ],
+      "location": "Global",
+      "name": "[concat(parameters('profiles_w4a_name'), '/', parameters('profiles_w4a_name'), 'marie')]",
+      "properties": {
+        "contentTypesToCompress": [
+          "application/eot",
+          "application/font",
+          "application/font-sfnt",
+          "application/javascript",
+          "application/json",
+          "application/opentype",
+          "application/otf",
+          "application/pkcs7-mime",
+          "application/truetype",
+          "application/ttf",
+          "application/vnd.ms-fontobject",
+          "application/xhtml+xml",
+          "application/xml",
+          "application/xml+rss",
+          "application/x-font-opentype",
+          "application/x-font-truetype",
+          "application/x-font-ttf",
+          "application/x-httpd-cgi",
+          "application/x-javascript",
+          "application/x-mpegurl",
+          "application/x-opentype",
+          "application/x-otf",
+          "application/x-perl",
+          "application/x-ttf",
+          "font/eot",
+          "font/ttf",
+          "font/otf",
+          "font/opentype",
+          "image/svg+xml",
+          "text/css",
+          "text/csv",
+          "text/html",
+          "text/javascript",
+          "text/js",
+          "text/plain",
+          "text/richtext",
+          "text/tab-separated-values",
+          "text/xml",
+          "text/x-script",
+          "text/x-component",
+          "text/x-java-source"
+        ],
+        "deliveryPolicy": {
+          "rules": [
+            {
+              "actions": [
+                {
+                  "name": "UrlRedirect",
+                  "parameters": {
+                    "@odata.type": "#Microsoft.Azure.Cdn.Models.DeliveryRuleUrlRedirectActionParameters",
+                    "destinationProtocol": "Https",
+                    "redirectType": "Moved"
+                  }
+                }
+              ],
+              "conditions": [
+                {
+                  "name": "RequestScheme",
+                  "parameters": {
+                    "@odata.type": "#Microsoft.Azure.Cdn.Models.DeliveryRuleRequestSchemeConditionParameters",
+                    "matchValues": [
+                      "HTTP"
+                    ],
+                    "negateCondition": false,
+                    "operator": "Equal"
+                  }
+                }
+              ],
+              "name": "httpsRedirect",
+              "order": 1
+            },
+            {
+              "actions": [
+                {
+                  "name": "UrlRedirect",
+                  "parameters": {
+                    "@odata.type": "#Microsoft.Azure.Cdn.Models.DeliveryRuleUrlRedirectActionParameters",
+                    "customPath": "/#/contact",
+                    "destinationProtocol": "Https",
+                    "redirectType": "Moved"
+                  }
+                }
+              ],
+              "conditions": [
+                {
+                  "name": "UrlPath",
+                  "parameters": {
+                    "@odata.type": "#Microsoft.Azure.Cdn.Models.DeliveryRuleUrlPathMatchConditionParameters",
+                    "matchValues": [
+                      "Contact"
+                    ],
+                    "negateCondition": false,
+                    "operator": "Contains",
+                    "transforms": []
+                  }
+                }
+              ],
+              "name": "ContactRedirect",
+              "order": 2
+            },
+            {
+              "actions": [
+                {
+                  "name": "UrlRedirect",
+                  "parameters": {
+                    "@odata.type": "#Microsoft.Azure.Cdn.Models.DeliveryRuleUrlRedirectActionParameters",
+                    "customPath": "/#/bio",
+                    "destinationProtocol": "Https",
+                    "redirectType": "Moved"
+                  }
+                }
+              ],
+              "conditions": [
+                {
+                  "name": "UrlPath",
+                  "parameters": {
+                    "@odata.type": "#Microsoft.Azure.Cdn.Models.DeliveryRuleUrlPathMatchConditionParameters",
+                    "matchValues": [
+                      "BioExhibitions"
+                    ],
+                    "negateCondition": false,
+                    "operator": "Contains",
+                    "transforms": []
+                  }
+                }
+              ],
+              "name": "BioRedirect",
+              "order": 3
+            },
+            {
+              "actions": [
+                {
+                  "name": "UrlRedirect",
+                  "parameters": {
+                    "@odata.type": "#Microsoft.Azure.Cdn.Models.DeliveryRuleUrlRedirectActionParameters",
+                    "customPath": "/#/gallery",
+                    "destinationProtocol": "Https",
+                    "redirectType": "Moved"
+                  }
+                }
+              ],
+              "conditions": [
+                {
+                  "name": "UrlPath",
+                  "parameters": {
+                    "@odata.type": "#Microsoft.Azure.Cdn.Models.DeliveryRuleUrlPathMatchConditionParameters",
+                    "matchValues": [
+                      "Home"
+                    ],
+                    "negateCondition": false,
+                    "operator": "Contains",
+                    "transforms": []
+                  }
+                }
+              ],
+              "name": "HomeRedirect",
+              "order": 4
+            }
+          ]
+        },
+        "geoFilters": [],
+        "isCompressionEnabled": true,
+        "isHttpAllowed": true,
+        "isHttpsAllowed": true,
+        "originGroups": [],
+        "originHostHeader": "w4amarie.z6.web.core.windows.net",
+        "origins": [
+          {
+            "name": "w4amarie-z6-web-core-windows-net",
+            "properties": {
+              "enabled": true,
+              "hostName": "w4amarie.z6.web.core.windows.net",
+              "httpPort": 80,
+              "httpsPort": 443,
+              "originHostHeader": "w4amarie.z6.web.core.windows.net",
+              "priority": 1,
+              "weight": 1000
+            }
+          }
+        ],
+        "queryStringCachingBehavior": "IgnoreQueryString",
+        "urlSigningKeys": []
+      },
+      "tags": {
+        "branch": "marie",
+        "project": "website4art"
+      },
+      "type": "Microsoft.Cdn/profiles/endpoints"
+    },
+    {
+      "apiVersion": "2020-09-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Cdn/profiles', parameters('profiles_w4a_name'))]"
+      ],
+      "location": "Global",
+      "name": "[concat(parameters('profiles_w4a_name'), '/', parameters('profiles_w4a_name'), 'till')]",
+      "properties": {
+        "contentTypesToCompress": [
+          "application/eot",
+          "application/font",
+          "application/font-sfnt",
+          "application/javascript",
+          "application/json",
+          "application/opentype",
+          "application/otf",
+          "application/pkcs7-mime",
+          "application/truetype",
+          "application/ttf",
+          "application/vnd.ms-fontobject",
+          "application/xhtml+xml",
+          "application/xml",
+          "application/xml+rss",
+          "application/x-font-opentype",
+          "application/x-font-truetype",
+          "application/x-font-ttf",
+          "application/x-httpd-cgi",
+          "application/x-javascript",
+          "application/x-mpegurl",
+          "application/x-opentype",
+          "application/x-otf",
+          "application/x-perl",
+          "application/x-ttf",
+          "font/eot",
+          "font/ttf",
+          "font/otf",
+          "font/opentype",
+          "image/svg+xml",
+          "text/css",
+          "text/csv",
+          "text/html",
+          "text/javascript",
+          "text/js",
+          "text/plain",
+          "text/richtext",
+          "text/tab-separated-values",
+          "text/xml",
+          "text/x-script",
+          "text/x-component",
+          "text/x-java-source"
+        ],
+        "deliveryPolicy": {
+          "rules": [
+            {
+              "actions": [
+                {
+                  "name": "UrlRedirect",
+                  "parameters": {
+                    "@odata.type": "#Microsoft.Azure.Cdn.Models.DeliveryRuleUrlRedirectActionParameters",
+                    "destinationProtocol": "Https",
+                    "redirectType": "Moved"
+                  }
+                }
+              ],
+              "conditions": [
+                {
+                  "name": "RequestScheme",
+                  "parameters": {
+                    "@odata.type": "#Microsoft.Azure.Cdn.Models.DeliveryRuleRequestSchemeConditionParameters",
+                    "matchValues": [
+                      "HTTP"
+                    ],
+                    "negateCondition": false,
+                    "operator": "Equal"
+                  }
+                }
+              ],
+              "name": "httpsRedirect",
+              "order": 1
+            },
+            {
+              "actions": [
+                {
+                  "name": "UrlRedirect",
+                  "parameters": {
+                    "@odata.type": "#Microsoft.Azure.Cdn.Models.DeliveryRuleUrlRedirectActionParameters",
+                    "customPath": "/#/contact",
+                    "destinationProtocol": "Https",
+                    "redirectType": "Moved"
+                  }
+                }
+              ],
+              "conditions": [
+                {
+                  "name": "UrlPath",
+                  "parameters": {
+                    "@odata.type": "#Microsoft.Azure.Cdn.Models.DeliveryRuleUrlPathMatchConditionParameters",
+                    "matchValues": [
+                      "Contact"
+                    ],
+                    "negateCondition": false,
+                    "operator": "Contains",
+                    "transforms": []
+                  }
+                }
+              ],
+              "name": "ContactRedirect",
+              "order": 2
+            },
+            {
+              "actions": [
+                {
+                  "name": "UrlRedirect",
+                  "parameters": {
+                    "@odata.type": "#Microsoft.Azure.Cdn.Models.DeliveryRuleUrlRedirectActionParameters",
+                    "customPath": "/#/bio",
+                    "destinationProtocol": "Https",
+                    "redirectType": "Moved"
+                  }
+                }
+              ],
+              "conditions": [
+                {
+                  "name": "UrlPath",
+                  "parameters": {
+                    "@odata.type": "#Microsoft.Azure.Cdn.Models.DeliveryRuleUrlPathMatchConditionParameters",
+                    "matchValues": [
+                      "BioExhibitions"
+                    ],
+                    "negateCondition": false,
+                    "operator": "Contains",
+                    "transforms": []
+                  }
+                }
+              ],
+              "name": "BioRedirect",
+              "order": 3
+            },
+            {
+              "actions": [
+                {
+                  "name": "UrlRedirect",
+                  "parameters": {
+                    "@odata.type": "#Microsoft.Azure.Cdn.Models.DeliveryRuleUrlRedirectActionParameters",
+                    "customPath": "/#/gallery",
+                    "destinationProtocol": "Https",
+                    "redirectType": "Moved"
+                  }
+                }
+              ],
+              "conditions": [
+                {
+                  "name": "UrlPath",
+                  "parameters": {
+                    "@odata.type": "#Microsoft.Azure.Cdn.Models.DeliveryRuleUrlPathMatchConditionParameters",
+                    "matchValues": [
+                      "Home"
+                    ],
+                    "negateCondition": false,
+                    "operator": "Contains",
+                    "transforms": []
+                  }
+                }
+              ],
+              "name": "HomeRedirect",
+              "order": 4
+            }
+          ]
+        },
+        "geoFilters": [],
+        "isCompressionEnabled": true,
+        "isHttpAllowed": true,
+        "isHttpsAllowed": true,
+        "originGroups": [],
+        "originHostHeader": "w4atill.z6.web.core.windows.net",
+        "origins": [
+          {
+            "name": "w4atill-z6-web-core-windows-net",
+            "properties": {
+              "enabled": true,
+              "hostName": "w4atill.z6.web.core.windows.net",
+              "httpPort": 80,
+              "httpsPort": 443,
+              "originHostHeader": "w4atill.z6.web.core.windows.net",
+              "priority": 1,
+              "weight": 1000
+            }
+          }
+        ],
+        "queryStringCachingBehavior": "IgnoreQueryString",
+        "urlSigningKeys": []
+      },
+      "tags": {
+        "branch": "till",
+        "project": "website4art"
+      },
+      "type": "Microsoft.Cdn/profiles/endpoints"
+    },
+    {
+      "apiVersion": "2021-01-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_w4ablobs_name'))]"
+      ],
+      "name": "[concat(parameters('storageAccounts_w4ablobs_name'), '/default')]",
+      "properties": {
+        "cors": {
+          "corsRules": []
+        },
+        "deleteRetentionPolicy": {
+          "days": 7,
+          "enabled": true
+        }
+      },
+      "sku": {
+        "name": "Premium_LRS",
+        "tier": "Premium"
+      },
+      "type": "Microsoft.Storage/storageAccounts/blobServices"
+    },
+    {
+      "apiVersion": "2021-01-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_w4amarie_name'))]"
+      ],
+      "name": "[concat(parameters('storageAccounts_w4amarie_name'), '/default')]",
+      "properties": {
+        "cors": {
+          "corsRules": []
+        },
+        "deleteRetentionPolicy": {
+          "enabled": false
+        }
+      },
+      "sku": {
+        "name": "Premium_LRS",
+        "tier": "Premium"
+      },
+      "type": "Microsoft.Storage/storageAccounts/blobServices"
+    },
+    {
+      "apiVersion": "2021-01-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_w4amaster_name'))]"
+      ],
+      "name": "[concat(parameters('storageAccounts_w4amaster_name'), '/default')]",
+      "properties": {
+        "cors": {
+          "corsRules": []
+        },
+        "deleteRetentionPolicy": {
+          "enabled": false
+        }
+      },
+      "sku": {
+        "name": "Premium_LRS",
+        "tier": "Premium"
+      },
+      "type": "Microsoft.Storage/storageAccounts/blobServices"
+    },
+    {
+      "apiVersion": "2021-01-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_w4atill_name'))]"
+      ],
+      "name": "[concat(parameters('storageAccounts_w4atill_name'), '/default')]",
+      "properties": {
+        "cors": {
+          "corsRules": []
+        },
+        "deleteRetentionPolicy": {
+          "enabled": false
+        }
+      },
+      "sku": {
+        "name": "Premium_LRS",
+        "tier": "Premium"
+      },
+      "type": "Microsoft.Storage/storageAccounts/blobServices"
+    },
+    {
+      "apiVersion": "2018-11-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_ASP_website4art_8113_name'))]"
+      ],
+      "kind": "functionapp,linux",
+      "location": "West Europe",
+      "name": "[parameters('sites_w4aapi_name')]",
+      "properties": {
+        "clientAffinityEnabled": false,
+        "clientCertEnabled": false,
+        "containerSize": 1536,
+        "dailyMemoryTimeQuota": 0,
+        "enabled": true,
+        "hostNameSslStates": [
+          {
+            "hostType": "Standard",
+            "name": "[concat(parameters('sites_w4aapi_name'), '.azurewebsites.net')]",
+            "sslState": "Disabled"
+          },
+          {
+            "hostType": "Repository",
+            "name": "[concat(parameters('sites_w4aapi_name'), '.scm.azurewebsites.net')]",
+            "sslState": "Disabled"
+          }
+        ],
+        "hostNamesDisabled": false,
+        "httpsOnly": false,
+        "hyperV": false,
+        "isXenon": false,
+        "redundancyMode": "None",
+        "reserved": true,
+        "scmSiteAlsoStopped": false,
+        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_ASP_website4art_8113_name'))]",
+        "siteConfig": {}
+      },
+      "tags": {
+        "branch": "GENERIC",
+        "project": "website4art"
+      },
+      "type": "Microsoft.Web/sites"
+    },
+    {
+      "apiVersion": "2018-11-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', parameters('sites_w4aapi_name'))]"
+      ],
+      "location": "West Europe",
+      "name": "[concat(parameters('sites_w4aapi_name'), '/web')]",
+      "properties": {
+        "alwaysOn": false,
+        "autoHealEnabled": false,
+        "azureStorageAccounts": {},
+        "cors": {
+          "allowedOrigins": [
+            "*"
+          ],
+          "supportCredentials": false
+        },
+        "defaultDocuments": [
+          "Default.htm",
+          "Default.html",
+          "Default.asp",
+          "index.htm",
+          "index.html",
+          "iisstart.htm",
+          "default.aspx",
+          "index.php"
+        ],
+        "detailedErrorLoggingEnabled": false,
+        "experiments": {
+          "rampUpRules": []
+        },
+        "ftpsState": "AllAllowed",
+        "http20Enabled": false,
+        "httpLoggingEnabled": false,
+        "ipSecurityRestrictions": [
+          {
+            "action": "Allow",
+            "description": "Allow all access",
+            "ipAddress": "Any",
+            "name": "Allow all",
+            "priority": 1
+          }
+        ],
+        "linuxFxVersion": "NODE|10",
+        "loadBalancing": "LeastRequests",
+        "localMySqlEnabled": false,
+        "logsDirectorySizeLimit": 35,
+        "managedPipelineMode": "Integrated",
+        "minTlsVersion": "1.2",
+        "netFrameworkVersion": "v4.0",
+        "numberOfWorkers": -1,
+        "publishingUsername": "$w4aapi",
+        "remoteDebuggingEnabled": false,
+        "requestTracingEnabled": false,
+        "reservedInstanceCount": 0,
+        "scmIpSecurityRestrictions": [
+          {
+            "action": "Allow",
+            "description": "Allow all access",
+            "ipAddress": "Any",
+            "name": "Allow all",
+            "priority": 1
+          }
+        ],
+        "scmIpSecurityRestrictionsUseMain": false,
+        "scmType": "None",
+        "use32BitWorkerProcess": true,
+        "virtualApplications": [
+          {
+            "physicalPath": "site\\wwwroot",
+            "preloadEnabled": false,
+            "virtualPath": "/"
+          }
+        ],
+        "webSocketsEnabled": false
+      },
+      "tags": {
+        "branch": "GENERIC",
+        "project": "website4art"
+      },
+      "type": "Microsoft.Web/sites/config"
+    },
+    {
+      "apiVersion": "2018-11-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', parameters('sites_w4aapi_name'))]"
+      ],
+      "location": "West Europe",
+      "name": "[concat(parameters('sites_w4aapi_name'), '/GetCaptcha')]",
+      "properties": {
+        "config": {},
+        "config_href": "https://w4aapi.azurewebsites.net/admin/vfs/home/site/wwwroot/GetCaptcha/function.json",
+        "href": "https://w4aapi.azurewebsites.net/admin/functions/GetCaptcha",
+        "script_href": "https://w4aapi.azurewebsites.net/admin/vfs/home/site/wwwroot/GetCaptcha/index.js",
+        "script_root_path_href": "https://w4aapi.azurewebsites.net/admin/vfs/home/site/wwwroot/GetCaptcha/"
+      },
+      "type": "Microsoft.Web/sites/functions"
+    },
+    {
+      "apiVersion": "2018-11-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', parameters('sites_w4aapi_name'))]"
+      ],
+      "location": "West Europe",
+      "name": "[concat(parameters('sites_w4aapi_name'), '/SendMessage')]",
+      "properties": {
+        "config": {},
+        "config_href": "https://w4aapi.azurewebsites.net/admin/vfs/home/site/wwwroot/SendMessage/function.json",
+        "href": "https://w4aapi.azurewebsites.net/admin/functions/SendMessage",
+        "script_href": "https://w4aapi.azurewebsites.net/admin/vfs/home/site/wwwroot/SendMessage/index.js",
+        "script_root_path_href": "https://w4aapi.azurewebsites.net/admin/vfs/home/site/wwwroot/SendMessage/"
+      },
+      "type": "Microsoft.Web/sites/functions"
+    },
+    {
+      "apiVersion": "2018-11-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', parameters('sites_w4aapi_name'))]"
+      ],
+      "location": "West Europe",
+      "name": "[concat(parameters('sites_w4aapi_name'), '/Watchdog')]",
+      "properties": {
+        "config": {},
+        "config_href": "https://w4aapi.azurewebsites.net/admin/vfs/home/site/wwwroot/Watchdog/function.json",
+        "href": "https://w4aapi.azurewebsites.net/admin/functions/Watchdog",
+        "script_href": "https://w4aapi.azurewebsites.net/admin/vfs/home/site/wwwroot/Watchdog/index.js",
+        "script_root_path_href": "https://w4aapi.azurewebsites.net/admin/vfs/home/site/wwwroot/Watchdog/"
+      },
+      "type": "Microsoft.Web/sites/functions"
+    },
+    {
+      "apiVersion": "2018-11-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', parameters('sites_w4aapi_name'))]"
+      ],
+      "location": "West Europe",
+      "name": "[concat(parameters('sites_w4aapi_name'), '/', parameters('sites_w4aapi_name'), '.azurewebsites.net')]",
+      "properties": {
+        "hostNameType": "Verified",
+        "siteName": "w4aapi"
+      },
+      "type": "Microsoft.Web/sites/hostNameBindings"
+    },
+    {
+      "apiVersion": "2020-09-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Cdn/profiles/endpoints', parameters('profiles_w4a_name'), concat(parameters('profiles_w4a_name'), 'marie'))]",
+        "[resourceId('Microsoft.Cdn/profiles', parameters('profiles_w4a_name'))]"
+      ],
+      "name": "[concat(parameters('profiles_w4a_name'), '/', parameters('profiles_w4a_name'), 'marie/www-marieboiselle-com')]",
+      "properties": {
+        "hostName": "www.marieboiselle.com"
+      },
+      "type": "Microsoft.Cdn/profiles/endpoints/customdomains"
+    },
+    {
+      "apiVersion": "2020-09-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Cdn/profiles/endpoints', parameters('profiles_w4a_name'), concat(parameters('profiles_w4a_name'), 'till'))]",
+        "[resourceId('Microsoft.Cdn/profiles', parameters('profiles_w4a_name'))]"
+      ],
+      "name": "[concat(parameters('profiles_w4a_name'), '/', parameters('profiles_w4a_name'), 'till/www-tillknapp-de')]",
+      "properties": {
+        "hostName": "www.tillknapp.de"
+      },
+      "type": "Microsoft.Cdn/profiles/endpoints/customdomains"
+    },
+    {
+      "apiVersion": "2020-09-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Cdn/profiles/endpoints', parameters('profiles_w4a_name'), concat(parameters('profiles_w4a_name'), 'marie'))]",
+        "[resourceId('Microsoft.Cdn/profiles', parameters('profiles_w4a_name'))]"
+      ],
+      "name": "[concat(parameters('profiles_w4a_name'), '/', parameters('profiles_w4a_name'), 'marie/', parameters('profiles_w4a_name'), 'marie-z6-web-core-windows-net')]",
+      "properties": {
+        "enabled": true,
+        "hostName": "w4amarie.z6.web.core.windows.net",
+        "httpPort": 80,
+        "httpsPort": 443,
+        "originHostHeader": "w4amarie.z6.web.core.windows.net",
+        "priority": 1,
+        "weight": 1000
+      },
+      "type": "Microsoft.Cdn/profiles/endpoints/origins"
+    },
+    {
+      "apiVersion": "2020-09-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Cdn/profiles/endpoints', parameters('profiles_w4a_name'), concat(parameters('profiles_w4a_name'), 'till'))]",
+        "[resourceId('Microsoft.Cdn/profiles', parameters('profiles_w4a_name'))]"
+      ],
+      "name": "[concat(parameters('profiles_w4a_name'), '/', parameters('profiles_w4a_name'), 'till/', parameters('profiles_w4a_name'), 'till-z6-web-core-windows-net')]",
+      "properties": {
+        "enabled": true,
+        "hostName": "w4atill.z6.web.core.windows.net",
+        "httpPort": 80,
+        "httpsPort": 443,
+        "originHostHeader": "w4atill.z6.web.core.windows.net",
+        "priority": 1,
+        "weight": 1000
+      },
+      "type": "Microsoft.Cdn/profiles/endpoints/origins"
+    },
+    {
+      "apiVersion": "2021-01-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts/blobServices', parameters('storageAccounts_w4amarie_name'), 'default')]",
+        "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_w4amarie_name'))]"
+      ],
+      "name": "[concat(parameters('storageAccounts_w4amarie_name'), '/default/$web')]",
+      "properties": {
+        "defaultEncryptionScope": "$account-encryption-key",
+        "denyEncryptionScopeOverride": false,
+        "publicAccess": "None"
+      },
+      "type": "Microsoft.Storage/storageAccounts/blobServices/containers"
+    },
+    {
+      "apiVersion": "2021-01-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts/blobServices', parameters('storageAccounts_w4amaster_name'), 'default')]",
+        "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_w4amaster_name'))]"
+      ],
+      "name": "[concat(parameters('storageAccounts_w4amaster_name'), '/default/$web')]",
+      "properties": {
+        "defaultEncryptionScope": "$account-encryption-key",
+        "denyEncryptionScopeOverride": false,
+        "publicAccess": "None"
+      },
+      "type": "Microsoft.Storage/storageAccounts/blobServices/containers"
+    },
+    {
+      "apiVersion": "2021-01-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts/blobServices', parameters('storageAccounts_w4atill_name'), 'default')]",
+        "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_w4atill_name'))]"
+      ],
+      "name": "[concat(parameters('storageAccounts_w4atill_name'), '/default/$web')]",
+      "properties": {
+        "defaultEncryptionScope": "$account-encryption-key",
+        "denyEncryptionScopeOverride": false,
+        "publicAccess": "None"
+      },
+      "type": "Microsoft.Storage/storageAccounts/blobServices/containers"
+    },
+    {
+      "apiVersion": "2021-01-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts/blobServices', parameters('storageAccounts_w4ablobs_name'), 'default')]",
+        "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_w4ablobs_name'))]"
+      ],
+      "name": "[concat(parameters('storageAccounts_w4ablobs_name'), '/default/azure-webjobs-hosts')]",
+      "properties": {
+        "defaultEncryptionScope": "$account-encryption-key",
+        "denyEncryptionScopeOverride": false,
+        "publicAccess": "None"
+      },
+      "type": "Microsoft.Storage/storageAccounts/blobServices/containers"
+    },
+    {
+      "apiVersion": "2021-01-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts/blobServices', parameters('storageAccounts_w4ablobs_name'), 'default')]",
+        "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_w4ablobs_name'))]"
+      ],
+      "name": "[concat(parameters('storageAccounts_w4ablobs_name'), '/default/azure-webjobs-secrets')]",
+      "properties": {
+        "defaultEncryptionScope": "$account-encryption-key",
+        "denyEncryptionScopeOverride": false,
+        "publicAccess": "None"
+      },
+      "type": "Microsoft.Storage/storageAccounts/blobServices/containers"
+    },
+    {
+      "apiVersion": "2021-01-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts/blobServices', parameters('storageAccounts_w4ablobs_name'), 'default')]",
+        "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_w4ablobs_name'))]"
+      ],
+      "name": "[concat(parameters('storageAccounts_w4ablobs_name'), '/default/function-releases')]",
+      "properties": {
+        "defaultEncryptionScope": "$account-encryption-key",
+        "denyEncryptionScopeOverride": false,
+        "publicAccess": "None"
+      },
+      "type": "Microsoft.Storage/storageAccounts/blobServices/containers"
+    },
+    {
+      "apiVersion": "2021-01-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts/blobServices', parameters('storageAccounts_w4ablobs_name'), 'default')]",
+        "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_w4ablobs_name'))]"
+      ],
+      "name": "[concat(parameters('storageAccounts_w4ablobs_name'), '/default/scm-releases')]",
+      "properties": {
+        "defaultEncryptionScope": "$account-encryption-key",
+        "denyEncryptionScopeOverride": false,
+        "publicAccess": "None"
+      },
+      "type": "Microsoft.Storage/storageAccounts/blobServices/containers"
+    }
+  ],
+  "variables": {}
+}

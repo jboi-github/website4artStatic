@@ -1,10 +1,10 @@
 [
   {
-    "full": "2020-2",
-    "square": "2020-2",
+    "full": "2021Malerei_1",
+    "square": "2021Malerei_1",
     "title": "",
-    "year": "2020",
-    "size": "250cm x 190cm",
+    "year": "2021",
+    "size": "120cm x 155cm",
     "material": "Lack, Öl",
     "story": ""
   },
@@ -14,6 +14,15 @@
     "title": "",
     "year": "2020",
     "size": "120cm x 155cm",
+    "material": "Lack, Öl",
+    "story": ""
+  },
+  {
+    "full": "2020-2",
+    "square": "2020-2",
+    "title": "",
+    "year": "2020",
+    "size": "250cm x 190cm",
     "material": "Lack, Öl",
     "story": ""
   },
@@ -36,66 +45,12 @@
     "story": ""
   },
   {
-    "full": "2020Malerei_A",
-    "square": "2020Malerei_A",
-    "title": "",
-    "year": "2019",
-    "size": "100cm x 80cm",
-    "material": "Lack auf Leinwand",
-    "story": ""
-  },
-  {
-    "full": "2020Malerei_2",
-    "square": "2020Malerei_2",
-    "title": "",
-    "year": "2019",
-    "size": "80cm x 60cm",
-    "material": "Lack, Öl auf Leinwand",
-    "story": ""
-  },
-  {
     "full": "2020Malerei_9",
     "square": "2020Malerei_9",
     "title": "51.272553, 15.041750",
     "year": "2019",
     "size": "155cm x 200cm",
     "material": "Lack, Acryl auf Leinwand",
-    "story": ""
-  },
-  {
-    "full": "P_MG_8377",
-    "square": "R4C3",
-    "title": "010100000110111101110010011 011100110111101100011011000 11011010000110100101101111",
-    "year": "2018",
-    "size": "150cm x 185cm",
-    "material": "Acryl, Lack, Binder, Öl auf Leinwand",
-    "story": ""
-  },
-  {
-    "full": "P_MG_8388",
-    "square": "R4C2",
-    "title": "",
-    "year": "2018",
-    "size": "70x90cm",
-    "material": "Acryl, Öl, Lack, Spray auf Leinwand und Holz",
-    "story": ""
-  },
-  {
-    "full": "P_MG_8386",
-    "square": "R5C2",
-    "title": "",
-    "year": "2018",
-    "size": "70x90cm",
-    "material": "Öl, Pigmente, Binder, Lack auf Leinwand und Holz",
-    "story": ""
-  },
-  {
-    "full": "R4C1",
-    "square": "R4C1",
-    "title": "",
-    "year": "",
-    "size": "50cm x 70cm",
-    "material": "Öl auf Pappe",
     "story": ""
   }
 ]
