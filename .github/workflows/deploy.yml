@@ -13,7 +13,7 @@ on: push
 #
 env:
   AZURE_FUNCTIONAPP_NAME: website4art3api
-  exif: Image-ExifTool-11.98
+  exif: Image-ExifTool-12.39
 
 jobs:
   build-and-deploy:
