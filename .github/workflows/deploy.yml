@@ -38,7 +38,7 @@ jobs:
         EOF
 
         docker build --tag website4art-node-azure - <<-EOF
-          FROM node:10
+          FROM node:latest
 
           RUN apt-get update
           RUN apt-get install apt-transport-https
