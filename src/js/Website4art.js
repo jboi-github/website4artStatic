@@ -25,13 +25,13 @@ function Website4art () {
     <div className="website4art">
       <W4aHeader name={profile.impressum.name} />
       <Routes>
-        <Route path="/" exact component={W4aGallery} />
-        <Route path="/gallery" exact component={W4aGallery} />
-        <Route path="/bio" exact component={W4aBio} />
-        <Route path="/contact" exact component={W4aContact} />
-        <Route path="/impressum" exact component={W4aImpressum} />
-        <Route path="/impressions" exact component={W4aImpressions} />
-        <Route path="/privacy" exact component={W4aPrivacy} />
+        <Route path="/" element={<W4aGallery/>} />
+        <Route path="/gallery" element={<W4aGallery/>} />
+        <Route path="/bio" element={<W4aBio/>} />
+        <Route path="/contact" element={<W4aContact/>} />
+        <Route path="/impressum" element={<W4aImpressum/>} />
+        <Route path="/impressions" element={<W4aImpressions/>} />
+        <Route path="/privacy" element={<W4aPrivacy/>} />
       </Routes>
       <W4aFooter
         name={profile.impressum.name}
