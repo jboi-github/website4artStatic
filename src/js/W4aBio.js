@@ -13,7 +13,7 @@ function W4aCurrents ({ currents }) {
           {current.place}<br />
           {current.date}<br />
           {current.time && <span>{current.time}<br /></span>}
-          {urrent.link && <W4aLinkExternal text={current.link} url={current.link}/>}
+          {current.link && <W4aLinkExternal text={current.link} url={current.link}/>}
         </p>
       )}
     </div>
