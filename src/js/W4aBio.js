@@ -58,12 +58,27 @@ function W4aPositions ({ positions }) {
 function W4aExhibitions ({ exhibitions }) {
   return (
     <div className="bioExhibitions">
-      <h2 className="bioExhibitionsTitle">Bisherige Ausstellungen</h2>
+      <h2 className="bioExhibitionsTitle">Ausstellungen</h2>
       {exhibitions.map((exhibition) =>
         <p className="bioExhibitionsText" key={exhibition.description}>
           <span className="bioExhibitionsDate">{exhibition.date}</span><br />
           {exhibition.description}<br />
           {exhibition.link && <W4aLinkExternal text={exhibition.link} url={exhibition.link}/>}
+        </p>
+      )}
+    </div>
+  )
+}
+
+function W4aSponsorships ({ sponsorships }) {
+  return (
+    <div className="bioExhibitions">
+      <h2 className="bioExhibitionsTitle">F&ouml;rderungen</h2>
+      {sponsorships.map((sponsorship) =>
+        <p className="bioExhibitionsText" key={sponsorship.description}>
+          <span className="bioExhibitionsDate">{sponsorship.date}</span><br />
+          {sponsorship.description}<br />
+          {sponsorship.link && <W4aLinkExternal text={sponsorship.link} url={sponsorship.link}/>}
         </p>
       )}
     </div>
@@ -96,6 +111,7 @@ function W4aBio () {
       {profile.bio.upcoming && <W4aUpcomings upcomings={profile.bio.upcoming} />}
       {profile.bio.positions && <W4aPositions positions={profile.bio.positions} />}
       {profile.bio.exhibitions && <W4aExhibitions exhibitions={profile.bio.exhibitions} />}
+      {profile.bio.sponsorships && <W4aSponsorships sponsorships={profile.bio.sponsorships} />}
       {profile.bio.quotes && <W4aQuotes quotes={profile.bio.quotes} />}
     </div>
   )
