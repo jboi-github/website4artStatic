@@ -1,7 +1,8 @@
 name: deploy
 
 #
-# This workflow deploys the static portion of website4art to the Azure storage after a successful push to any branch.
+# This workflow deploys the static portion of website4art to the Azure storage 
+# after a successful push to any branch.
 #
 
 on: push
