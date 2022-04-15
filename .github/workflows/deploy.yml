@@ -96,6 +96,7 @@ jobs:
             # Upload to Azure
             cd build
             az storage blob upload-batch \
+              --overwrite \
               --destination \\\$web \
               --source .  \
               --connection-string "`cat .connString`"
