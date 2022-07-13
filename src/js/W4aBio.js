@@ -30,7 +30,7 @@ function W4aUpcomings ({ upcomings }) {
           {upcoming.place}<br />
           {upcoming.date}<br />
           {upcoming.time && <div>{upcoming.time}<br /></div>}
-          {upcoming.link && <W4aLinkExternal text={upcoming.link} url={upcoming.link}/>}
+          {upcoming.link && <W4aLinkExternal text="" url={upcoming.link}/>}
         </p>
       )}
     </div>
