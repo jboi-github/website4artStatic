@@ -10,8 +10,12 @@
         "born": "",
         "positions": [
             {
-                "date": "seit 2017",
-                "description": "Kunststudium an der HfbK bei Anselm Reyle"
+                "date": "2022",
+                "description": "MA, HfbK, University of Fine Arts Hamburg in the class of Anselm Reyle"
+            },
+            {
+                "date": "2017 - 2022",
+                "description": "BA, HfbK, University of Fine Arts Hamburg in the class of Anselm Reyle"
             },
             {
                 "date": "*1994",
@@ -30,6 +34,16 @@
         "XupcomingX": [
         ],
         "exhibitions": [
+            {
+                "description": "Sommer frische Kunst, Bad Gastein (Austria)",
+                "date": "2022",
+                "link": "https://artbadgastein.com/artists/artists-2022/marie-boiselle/"
+            },
+            {
+                "description": "Graduation Show, University of Fine Arts Hamburg, Hamburg",
+                "date": "2022",
+                "link": ""
+            },
             {
                 "description": "Jung - Figürlich - Gutaussehend, Fabrik der Künste, Hamburg",
                 "date": "2020",
