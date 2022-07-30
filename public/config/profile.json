@@ -4,7 +4,10 @@
         "name": "Marie Boiselle",
         "umsatzSteuerNr": "46/026/03003",
         "wirtschaftsId": "---",
-        "instagram": ""
+        "instagramLink": "https://instagram.com/_marieboiselle",
+        "instagramName": "_marieboiselle",
+        "emailLink": "mailto:contact@marieboiselle.com",
+        "emailName": "contact@marieboiselle.com"
     },
     "bio": {
         "born": "",
