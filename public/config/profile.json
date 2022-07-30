@@ -4,7 +4,9 @@
         "name": "Jürgen Boiselle",
         "umsatzSteuerNr": "meine nummer",
         "wirtschaftsId": "---",
-        "instagram": "https://www.instagram.com/jurgenboiselle/"
+        "instagramLink": "https://www.instagram.com/jurgenboiselle/",
+        "instagramName": "https://www.instagram.com/jurgenboiselle/",
+        "email": "contact@marieboiselle.com"
     },
     "bio": {
         "born": "",

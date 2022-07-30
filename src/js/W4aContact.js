@@ -1,106 +1,112 @@
-import React, { useState, useEffect } from 'react'
-import W4aLinkInternal from './W4aLinkInternal'
-import { loadingCaptcha, getCaptcha, sendMessage, setHeaderFooterScrollTarget } from './api'
+import React, { useEffect, useState } from 'react'
+import W4aLinkExternal from './W4aLinkExternal'
+import { loadProfile, emptyProfile, setHeaderFooterScrollTarget } from './api'
+import PropTypes from 'prop-types'
+
+function W4aCurrents ({ currents }) {
+  return (
+    <div className="bioCurrents">
+      <h2 className="bioCurrentsTitle">Laufende Ausstellung</h2>
+      {currents.map((current) =>
+        <p className="bioCurrentsText" key={current.name}>
+          <span className="bioCurrentsName">{current.name}</span><br />
+          {current.place}<br />
+          {current.date}<br />
+          {current.time && <span>{current.time}<br /></span>}
+          <W4aLinkExternal text={current.link} url={current.link}/>
+        </p>
+      )}
+    </div>
+  )
+}
+
+function W4aUpcomings ({ upcomings }) {
+  return (
+    <div className="bioUpcomings">
+      <h2 className="bioUpcomingsTitle">N&auml;chste Ausstellung</h2>
+      {upcomings.map((upcoming) =>
+        <p className="bioUpcomingsText" key={upcoming.name}>
+          <span className="bioUpcomingsName">{upcoming.name}</span><br />
+          {upcoming.place}<br />
+          {upcoming.date}<br />
+          {upcoming.time && <div>{upcoming.time}<br /></div>}
+          <W4aLinkExternal text={upcoming.link} url={upcoming.link}/>
+        </p>
+      )}
+    </div>
+  )
+}
+
+function W4aPositions ({ positions }) {
+  return (
+    <div className="bioPositions">
+      <h2 className="bioPositionsTitle">Vita</h2>
+      <table>
+        <tbody>
+          {positions.map((position) =>
+            <tr key={position.date}>
+              <td className="bioPositionsDate">{position.date}</td>
+              <td className="bioPositionsDescription">{position.description}</td>
+            </tr>
+          )}
+        </tbody>
+      </table>
+    </div>
+  )
+}
+
+function W4aExhibitions ({ exhibitions }) {
+  return (
+    <div className="bioExhibitions">
+      <h2 className="bioExhibitionsTitle">Bisherige Ausstellungen</h2>
+      {exhibitions.map((exhibition) =>
+        <p className="bioExhibitionsText" key={exhibition.description}>
+          <span className="bioExhibitionsDate">{exhibition.date}</span><br />
+          {exhibition.description}<br />
+          <W4aLinkExternal text={exhibition.link} url={exhibition.link}/>
+        </p>
+      )}
+    </div>
+  )
+}
+
+function W4aQuotes ({ quotes }) {
+  return (
+    <div className="bioQuotes">
+      <h2 className="bioQuotesTitle">Pressestimmen</h2>
+      {quotes.map((quote) =>
+        <p className="bioQuotesText" key={quote.quote}>
+          <span className="bioQuotesQuote">{quote.quote}</span><br />
+          {quote.source}<br />
+          <W4aLinkExternal text={quote.link} url={quote.link}/>
+        </p>
+      )}
+    </div>
+  )
+}
 
 function W4aContact () {
+  const [profile, setProfile] = useState(emptyProfile)
+  useEffect(() => { loadProfile(setProfile) }, []) // Run once
   useEffect(() => { setHeaderFooterScrollTarget(false) }, []) // Run once
 
-  // submit
-  async function handleSubmit (event) {
-    event.preventDefault()
-
-    const indicator = document.getElementById('indicator')
-    indicator.innerText = ''
-    indicator.classList.add('contactWait')
-
-    const elements = document.querySelector('form').elements
-    const result = await sendMessage(
-      elements.name.value,
-      elements.email.value,
-      elements.message.value,
-      elements.code.value,
-      elements.squashed.value,
-      elements.expires.value,
-      elements.privacy.value)
-
-    indicator.innerText = result.msg || result.response.statusText
-
-    // Refresh captcha for next message
-    handleCaptchaRefresh()
-    indicator.classList.remove('contactWait')
-  }
-
-  // Any change of input -> Check for enabling submit button
-  const [enableSubmit, setEnableSubmit] = useState(false)
-  function handleChange () {
-    const elements = document.querySelector('form').elements
-    const values = ['squashed', 'email', 'message'].map((name) => elements[name].value)
-    const valid = values.every((value) => value && value.trim() !== '') && elements.privacy.checked && elements.expires.value > 0
-    if (valid && elements.code.value.trim() === '') elements.code.focus()
-    setEnableSubmit(valid)
-  }
-
-  // Refresh Captcha
-  const [captcha, setCaptcha] = useState(loadingCaptcha)
-  async function handleCaptchaRefresh () {
-    const img = document.getElementById('captchaImage')
-    img.src = ''
-    img.classList.add('contactWait')
-
-    const response = await getCaptcha(img.clientWidth, img.clientHeight)
-    setCaptcha(response)
-    img.classList.remove('contactWait')
-  }
-  useEffect(() => {
-    handleCaptchaRefresh()
-  }, []) // Called once
-
-  // Reset
-  function handleReset () {
-    setEnableSubmit(false)
-  }
-
   return (
-    <form onSubmit={handleSubmit} className="contactForm">
-      {
-        // The message
-      }
-      <input type="text" name="name" placeholder="Name" autoFocus onChange={handleChange} className="contactFormName" />
-      <input type="email" name="email" placeholder="Email*" required onChange={handleChange} className="contactFormEmail" />
-      <textarea rows="3" name="message" placeholder="Nachricht*" required onChange={handleChange} className="contactFormMessage" />
-      <span className="contactFormMandatory">* Pflichtfeld</span>
-      {
-        // Captcha fields
-      }
-      <div className="contactFormCaptcha">
-        <img src={captcha.captcha.img} alt="" id="captchaImage" draggable="false" className="contactFormCaptchaImage" />
-        <input type="hidden" name="expires" value={captcha.captcha.hash.expires} />
-        <input type="hidden" name="squashed" value={captcha.captcha.hash.squashed} />
-        <div className="contactFormCaptchaControl">
-          <input type="text" name="code" placeholder="Captcha Code*" required size="6" onChange={handleChange} className="contactFormCaptchaCode" />
-          <button type="button" onClick={handleCaptchaRefresh} className="contactFormCaptchaRefresh"><i className='fas fa-redo' /></button>
-        </div>
+    <div className="contact">
+      <div className="bioPositions">
+        <table>
+          <tbody>
+          <tr>
+              <td className="bioPositionsDate">Email</td>
+              <td className="bioPositionsDescription">{profile.impressum.email}}</td>
+            </tr>
+            <tr>
+              <td className="bioPositionsDate">Instagram</td>
+              <td className="bioPositionsDescription">{profile.impressum.instagramName}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-
-      {
-        // Controls
-      }
-      <span className="contactFormPrivacy">
-        <input type="checkbox" name="privacy" value="accepted" required onChange={handleChange} className="contactFormPrivacyCheckbox"/>
-        <W4aLinkInternal text="Datenschutzerkl&auml;rung*" url="/privacy" />
-      </span>
-      <button type="submit" disabled={!enableSubmit} className="contactFormSubmit">
-        <span><i className="fas fa-paper-plane" />Senden</span>
-      </button>
-      <button type="reset" onClick={handleReset} className="contactFormReset">
-        <span><i className="fas fa-eraser" />Eingaben l&ouml;schen</span>
-      </button>
-
-      {
-        // Result Message
-      }
-      <p id="indicator" className="contactFormResult" />
-    </form>
+    </div>
   )
 }
 
