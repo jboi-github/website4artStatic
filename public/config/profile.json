@@ -6,7 +6,8 @@
         "wirtschaftsId": "---",
         "instagramLink": "https://www.instagram.com/jurgenboiselle/",
         "instagramName": "https://www.instagram.com/jurgenboiselle/",
-        "email": "contact@marieboiselle.com"
+        "emailLink": "mailto:contact@marieboiselle.com",
+        "emailName": "contact@marieboiselle.com"
     },
     "bio": {
         "born": "",

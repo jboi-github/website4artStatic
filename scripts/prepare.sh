@@ -1,7 +1,7 @@
 #!/bin/sh -x
 
 echo "Building Docker Images and install components on it"
-exif=Image-ExifTool-11.98
+exif=Image-ExifTool-12.44
 
 docker build --tag website4art-python-images - <<-EOF
 	FROM python:latest
