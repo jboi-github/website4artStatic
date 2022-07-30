@@ -10,7 +10,7 @@ function W4aContact () {
   useEffect(() => { setHeaderFooterScrollTarget(false) }, []) // Run once
 
   return (
-    <div className="contact">
+    <div className="bio">
       <div className="bioPositions">
       <h2 className="bioPositionsTitle"></h2>
         <table>
