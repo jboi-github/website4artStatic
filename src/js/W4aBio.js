@@ -20,23 +20,6 @@ function W4aCurrents ({ currents }) {
   )
 }
 
-function W4aUpcomings ({ upcomings }) {
-  return (
-    <div className="bioUpcomings">
-      <h2 className="bioUpcomingsTitle">Upcoming</h2>
-      {upcomings.map((upcoming) =>
-        <p className="bioUpcomingsText" key={upcoming.name}>
-          <span className="bioUpcomingsName">{upcoming.name}</span><br />
-          {upcoming.place}<br />
-          {upcoming.date}<br />
-          {upcoming.time && <div>{upcoming.time}<br /></div>}
-          {upcoming.link && <W4aLinkExternal text="" url={upcoming.link}/>}
-        </p>
-      )}
-    </div>
-  )
-}
-
 function W4aPositions ({ positions }) {
   return (
     <div className="bioPositions">
@@ -51,6 +34,21 @@ function W4aPositions ({ positions }) {
           )}
         </tbody>
       </table>
+    </div>
+  )
+}
+
+function W4aUpcomings ({ upcomings }) {
+  return (
+    <div className="bioUpcomings">
+      <h2 className="bioUpcomingsTitle">Upcoming</h2>
+      {upcomings.map((upcoming) =>
+        <p className="bioUpcomingsText" key={upcoming.description}>
+          <span className="bioUpcomingsDate">{upcoming.date}</span><br />
+          {upcoming.description}<br />
+          {upcoming.link && <W4aLinkExternal text={upcoming.link} url={upcoming.link}/>}
+        </p>
+      )}
     </div>
   )
 }
@@ -108,8 +106,8 @@ function W4aBio () {
   return (
     <div className="bio">
       {profile.bio.current && <W4aCurrents currents={profile.bio.current} />}
-      {profile.bio.upcoming && <W4aUpcomings upcomings={profile.bio.upcoming} />}
       {profile.bio.positions && <W4aPositions positions={profile.bio.positions} />}
+      {profile.bio.upcoming && <W4aUpcomings upcomings={profile.bio.upcoming} />}
       {profile.bio.exhibitions && <W4aExhibitions exhibitions={profile.bio.exhibitions} />}
       {profile.bio.sponsorships && <W4aSponsorships sponsorships={profile.bio.sponsorships} />}
       {profile.bio.quotes && <W4aQuotes quotes={profile.bio.quotes} />}
