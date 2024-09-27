@@ -23,7 +23,7 @@ function W4aCurrents ({ currents }) {
 function W4aUpcomings ({ upcomings }) {
   return (
     <div className="bioUpcomings">
-      <h2 className="bioUpcomingsTitle">N&auml;chste Ausstellung</h2>
+      <h2 className="bioUpcomingsTitle">Upcoming</h2>
       {upcomings.map((upcoming) =>
         <p className="bioUpcomingsText" key={upcoming.name}>
           <span className="bioUpcomingsName">{upcoming.name}</span><br />
@@ -58,7 +58,7 @@ function W4aPositions ({ positions }) {
 function W4aExhibitions ({ exhibitions }) {
   return (
     <div className="bioExhibitions">
-      <h2 className="bioExhibitionsTitle">Ausstellungen</h2>
+      <h2 className="bioExhibitionsTitle">Exhibitions (selection)</h2>
       {exhibitions.map((exhibition) =>
         <p className="bioExhibitionsText" key={exhibition.description}>
           <span className="bioExhibitionsDate">{exhibition.date}</span><br />
@@ -73,7 +73,7 @@ function W4aExhibitions ({ exhibitions }) {
 function W4aSponsorships ({ sponsorships }) {
   return (
     <div className="bioExhibitions">
-      <h2 className="bioExhibitionsTitle">F&ouml;rderungen</h2>
+      <h2 className="bioExhibitionsTitle">Publications and Grants</h2>
       {sponsorships.map((sponsorship) =>
         <p className="bioExhibitionsText" key={sponsorship.description}>
           <span className="bioExhibitionsDate">{sponsorship.date}</span><br />
@@ -88,7 +88,7 @@ function W4aSponsorships ({ sponsorships }) {
 function W4aQuotes ({ quotes }) {
   return (
     <div className="bioQuotes">
-      <h2 className="bioQuotesTitle">Pressestimmen</h2>
+      <h2 className="bioQuotesTitle">Publications</h2>
       {quotes.map((quote) =>
         <p className="bioQuotesText" key={quote.quote}>
           <span className="bioQuotesQuote">{quote.quote}</span><br />

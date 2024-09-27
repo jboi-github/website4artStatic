@@ -13,16 +13,16 @@
         "born": "",
         "positions": [
             {
-                "date": "2022",
-                "description": "MA, HfbK, University of Fine Arts Hamburg in the class of Anselm Reyle"
+                "date": "*1994",
+                "description": "works and lives in Hamburg"
             },
             {
                 "date": "2017 - 2022",
-                "description": "BA, HfbK, University of Fine Arts Hamburg in the class of Anselm Reyle"
+                "description": "BA, HfbK, University of Fine Arts Hamburg, class of Anselm Reyle"
             },
             {
-                "date": "*1994",
-                "description": "Lebt & arbeitet in Hamburg"
+                "date": "2022 - ",
+                "description": "MA, HfbK, University of Fine Arts Hamburg, class of Anselm Reyle"
             }
         ],
         "XcurrentX": [
@@ -34,51 +34,71 @@
                 "link":"https://www.fabrikderkuenste.de/veranstaltungen.html"
             }
         ],
-        "XupcomingX": [
+        "upcoming": [
+            {
+                "description": "Galerie Rung&aelig;nger, Frankfurt",
+                "date": "October 2024",
+                "link": ""
+            }
         ],
         "exhibitions": [
+            {
+                "description": "Ultrakontemporär, Galerie Bludin Berisha, Kleine Gegenwart, Hamburg",
+                "date": "2024",
+                "link": ""
+            },
+            {
+                "description": "A Monster in the Sea is just a rabbit on the Wall, Feinkunst Krüger, Hamburg",
+                "date": "",
+                "link": ""
+            },
+            {
+                "description": "THE SPACE, transitions, Hamburg",
+                "date": "",
+                "link": ""
+            },
             {
                 "description": "Weserhalle, Art Auction 11, Berlin",
                 "date": "2023",
                 "link": ""
             },
             {
-                "description": "THE SPACE // Begegnungen, Hamburg",
-                "date": "2023",
+                "description": "THE SPACE, Begegnungen, Hamburg",
+                "date": "",
                 "link": ""
             },
             {
-                "description": "Sommer frische Kunst, Bad Gastein (Austria)",
+                "description": "Sommer frische Kunst, Bad Gastein, Austria",
                 "date": "2022",
                 "link": ""
             },
             {
-                "description": "Graduation Show, University of Fine Arts Hamburg, Hamburg",
-                "date": "2022",
+                "description": "Graduation Show, Hochschule für bildende Künste, Hamburg",
+                "date": "",
                 "link": ""
             },
             {
+                "date": "2020",
                 "description": "Jung - Figürlich - Gutaussehend, Fabrik der Künste, Hamburg",
-                "date": "2020",
                 "link": ""
             },
             {
-                "description": "Der River, Spinnerei Leipzig",
-                "date": "2020",
+                "date": "",
+                "description": "Der River, Spinnerei Leipzig, Leipzig",
                 "link": ""
             },
             {
-                "date": "2019",
-                "description": "gemEINSAM, G, xpon-art, Hamburg",
-                "link": ""
-            },
-            {
-                "date": "2018",
-                "description": "Isola Alicudi, G, Westwerk, Hamburg",
+                "date": "",
+                "description": "Isola Alicudi, Westwerk, Hamburg",
                 "link": ""
             }
         ],
         "sponsorships": [
+            {
+                "description": "Steinwerk Lithografie Kalender",
+                "date": "2024",
+                "link": ""
+            },
             {
                 "description": "Freundeskreis-Projektförderung",
                 "date": "2021",
@@ -87,9 +107,9 @@
         ],
         "XquotesX": [
             {
-                "quote": "Alles super gut!",
-                "source": "hamburg-magazin.de",
-                "link": "https://www.hamburg-magazin.de/veranstaltungen/artikel/detail/ausstellung-gemeinsam.html"
+                "quote": "2024",
+                "source": "Steinwerk Lithografie Kalender",
+                "link": ""
             }
         ]
     }
