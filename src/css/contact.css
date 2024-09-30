@@ -2,6 +2,8 @@
 * Format Contact
 */
 
+
+
 /* Give form contrast background */
 .contactForm {
     background-color: var(--w4a-background-secondary);
@@ -14,6 +16,13 @@
 
 /* Place elements in form */
 @media screen and (orientation: landscape) {
+    .landscapeOriented {
+        display: block;
+    }
+    .portraitOriented {
+        display: none;
+    }
+
 .contactForm {
     grid-template-columns: 29.5vw 29vw 20.5vw;
     grid-template-rows: 1vh 5vh 5vh 5vh 3.5vh 5vh 3.5vh 1vh;
@@ -49,6 +58,13 @@
 }
 }
 @media screen and (orientation: portrait) {
+    .landscapeOriented {
+        display: none;
+    }
+    .portraitOriented {
+        display: block;
+    }
+    
 .contactForm {
     grid-template-columns: 44.5vw 44.5vw;
     grid-template-rows: 1vh 3.5vh 3.5vh 10vh 3.5vh 10vh 3.5vh 3.5vh 1vh;

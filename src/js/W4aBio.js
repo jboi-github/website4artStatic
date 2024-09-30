@@ -44,9 +44,9 @@ function W4aUpcomings ({ upcomings }) {
       <h2 className="bioUpcomingsTitle">Upcoming</h2>
       {upcomings.map((upcoming) =>
         <p className="bioUpcomingsText" key={upcoming.description}>
-          <span className="bioUpcomingsDate">{upcoming.date}</span><br />
-          {upcoming.description}<br />
-          {upcoming.link && <W4aLinkExternal text={upcoming.link} url={upcoming.link}/>}
+          {upcoming.date && <span className="bioUpcomingsDate">{upcoming.date}&nbsp;</span>}
+          {upcoming.description}
+          {upcoming.link && <><br /><W4aLinkExternal text={upcoming.link} url={upcoming.link} /></>}
         </p>
       )}
     </div>
@@ -59,9 +59,9 @@ function W4aExhibitions ({ exhibitions }) {
       <h2 className="bioExhibitionsTitle">Exhibitions (selection)</h2>
       {exhibitions.map((exhibition) =>
         <p className="bioExhibitionsText" key={exhibition.description}>
-          <span className="bioExhibitionsDate">{exhibition.date}</span><br />
-          {exhibition.description}<br />
-          {exhibition.link && <W4aLinkExternal text={exhibition.link} url={exhibition.link}/>}
+          {exhibition.date && <div className="bioExhibitionsDate">{exhibition.date}</div>}
+          {exhibition.description}
+          {exhibition.link && <><br /><W4aLinkExternal text={exhibition.link} url={exhibition.link} /></>}
         </p>
       )}
     </div>
@@ -71,12 +71,27 @@ function W4aExhibitions ({ exhibitions }) {
 function W4aSponsorships ({ sponsorships }) {
   return (
     <div className="bioExhibitions">
-      <h2 className="bioExhibitionsTitle">Publications and Grants</h2>
+      <h2 className="bioExhibitionsTitle">Grants</h2>
       {sponsorships.map((sponsorship) =>
         <p className="bioExhibitionsText" key={sponsorship.description}>
           <span className="bioExhibitionsDate">{sponsorship.date}</span><br />
           {sponsorship.description}<br />
           {sponsorship.link && <W4aLinkExternal text={sponsorship.link} url={sponsorship.link}/>}
+        </p>
+      )}
+    </div>
+  )
+}
+
+function W4aPublications ({ publications }) {
+  return (
+    <div className="bioExhibitions">
+      <h2 className="bioExhibitionsTitle">Publications</h2>
+      {publications.map((publication) =>
+        <p className="bioExhibitionsText" key={publication.description}>
+          <span className="bioExhibitionsDate">{publication.date}</span><br />
+          {publication.description}<br />
+          {publication.link && <W4aLinkExternal text={publication.link} url={publication.link}/>}
         </p>
       )}
     </div>
@@ -110,6 +125,7 @@ function W4aBio () {
       {profile.bio.upcoming && <W4aUpcomings upcomings={profile.bio.upcoming} />}
       {profile.bio.exhibitions && <W4aExhibitions exhibitions={profile.bio.exhibitions} />}
       {profile.bio.sponsorships && <W4aSponsorships sponsorships={profile.bio.sponsorships} />}
+      {profile.bio.publications && <W4aPublications publications={profile.bio.publications} />}
       {profile.bio.quotes && <W4aQuotes quotes={profile.bio.quotes} />}
     </div>
   )

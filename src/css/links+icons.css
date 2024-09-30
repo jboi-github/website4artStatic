@@ -27,6 +27,7 @@
   text-decoration: none;
   color: inherit;
 }
+
 @media screen and (hover: hover) {
   .linkExternal:hover, .linkInternal:hover {
     color: var(--w4a-text-secondary);

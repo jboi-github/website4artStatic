@@ -20,7 +20,7 @@ function Website4art () {
   document.title = profile.impressum.name
 
   // This element has no special class for CSS. Use the body-tag for CSS
-  // When chaning routes, make sure this is also changed in "/scripts/sitemap-routes.js" !
+  // When changing routes, make sure this is also changed in "/scripts/sitemap-routes.js" !
   return (
     <div className="website4art">
       <W4aHeader name={profile.impressum.name} />

@@ -4,9 +4,11 @@
 
 /* Indent Bio */
 .bio {
-    width: 80%;
-    margin: 0 auto;
-  }
+  padding-left: 10vw;
+  padding-right: 10vw;
+  margin: 0 auto;
+  padding-top: 10em;
+}
   
   /* Make titles more visible */
   .bioQuotesTitle, .bioExhibitionsTitle, .bioCurrentsTitle, .bioUpcomingsTitle, .bioPositionsTitle {
@@ -23,6 +25,7 @@
     border-left: 0.5em solid var(--w4a-border);
     padding-left: 0.5em;
     font-style: italic;
+    max-width: 50vw;
   }
   
   /* Make names more visible */
@@ -30,3 +33,18 @@
     font-weight: bold;
   }
   
+  /* Make names more visible */
+  .bioExhibitionsDate, .bioUpcomingsDate {
+    padding-top: 1em;
+  }
+
+  /* Reduce space between paragraphs */
+  .bioQuotesText, .bioExhibitionsText, .bioCurrentsText, .bioUpcomingsText, .bioPositionsText {
+    margin-block-end: 0.25em;
+    margin-block-start: 0;
+  }
+
+  /* Source under quote is right aligned */
+  .bioQuotesSource {
+    text-align: right;
+  } 

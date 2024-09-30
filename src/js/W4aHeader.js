@@ -3,9 +3,9 @@ import W4aLinkInternal from './W4aLinkInternal'
 import PropTypes from 'prop-types'
 
 const links = [
-  { id: 1, text: 'Bilder', icon: 'fas fa-home', url: '/gallery' },
-  { id: 2, text: 'Bio', icon: 'fas fa-calendar-alt', url: '/bio' },
-  { id: 3, text: 'Kontakt', icon: 'fas fa-comments', url: '/contact' }
+  { id: 1, text: 'work', icon: 'fas fa-home', url: '/gallery' },
+  { id: 2, text: 'vita', icon: 'fas fa-calendar-alt', url: '/bio' },
+  { id: 3, text: 'contact', icon: 'fas fa-comments', url: '/contact' }
 ]
 
 function W4aHeaderTitle ({ name }) { return (<h1 className="headerTitle">{name}</h1>) }

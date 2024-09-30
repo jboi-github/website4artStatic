@@ -2,6 +2,10 @@
 * Gallery and Gallery-boxes including grid layout, spacing, shadow, details on hover etc
 */
 
+.gallery {
+  padding-top: 10em;
+}
+
 /* Formatting boxes*/
 .galleryFigure {
   margin-bottom: 10vh;
@@ -26,17 +30,19 @@
   text-align: center;
 }
 
+/*
 @media screen and (hover: hover) {
   .galleryFigureCaption {
-    opacity: 0;
+    opacity: 0.75;
     transition: opacity 0.5s ease-in-out;
   }
   .galleryFigureCaption:hover {
     opacity: 1;
   }
 }
-
+*/
 .galleryFigureCaptionTitle {
+  display: inline;
   font-size: medium;
   font-weight: lighter;
 }

@@ -20,30 +20,18 @@ function W4aGalleryPicture ({ pic: { full, square, title, year, size, material, 
       />
       {(title || year || size || material || story) &&
                 <figcaption className="galleryFigureCaption">
-                  {title && <h1 className="galleryFigureCaptionTitle">{title}</h1>}
-                  {(year || size || material) &&
-                        <p className="galleryFigureCaptionDetails">
-                          {year && year}
-                          {year && (size || material) && ' | '}
-                          {size && size}
-                          {(year || size) && material && <br />}
-                          {material && material}
-                        </p>
-                  }
+                  <p className="galleryFigureCaptionDetails">
+                    {title && <h1 className="galleryFigureCaptionTitle">{title}</h1>}
+                    {size && ', '}
+                    {size && size}
+                    {material && ', '}
+                    {material && material}
+                    {year && ', '}
+                    {year && year}
+                  </p>
                   {story && <p className="galleryFigureCaptionStory">{story}</p>}
                 </figcaption>
       }
-    </figure>
-  )
-}
-
-function W4aGalleryVideo () {
-  return (
-    <figure className="galleryFigure">
-      <video autoplay muted className="galleryFigureImage">
-        <source src="https://www.marieboiselle.com/gallery/videos/videoocean.mp4" type="video/mp4" />
-        Leider kann dieser Browser den Video nicht anzeigen.
-      </video>
     </figure>
   )
 }

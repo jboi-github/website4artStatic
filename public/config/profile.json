@@ -95,13 +95,15 @@
         ],
         "sponsorships": [
             {
-                "description": "Steinwerk Lithografie Kalender",
-                "date": "2024",
-                "link": ""
-            },
-            {
                 "description": "Freundeskreis-Projektförderung",
                 "date": "2021",
+                "link": ""
+            }
+        ],
+        "publications": [
+            {
+                "description": "Steinwerk Lithografie Kalender",
+                "date": "2024",
                 "link": ""
             }
         ],

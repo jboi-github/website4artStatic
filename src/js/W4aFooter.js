@@ -4,17 +4,16 @@ import W4aLinkExternal from './W4aLinkExternal'
 import PropTypes from 'prop-types'
 
 const linksInternal = [
-  { id: 1, text: 'Datenschutz', icon: 'far law-symbol', url: '/privacy' },
-  { id: 2, text: 'Impressum', icon: 'far fa-address-card', url: '/impressum' },
-  { id: 3, text: 'Impressionen', icon: 'far fa-images', url: '/impressions' }
+  { id: 1, text: 'privacy', icon: 'far law-symbol', url: '/privacy' },
+  { id: 2, text: 'imprint', icon: 'far fa-address-card', url: '/impressum' },
+  { id: 3, text: 'impressions', icon: 'far fa-images', url: '/impressions' }
 ]
 
 function W4aFooterCopyright ({ name }) {
   return (
     <span className="footerCopyright">
-            &copy;&nbsp;{new Date().getFullYear()} Bilder und Inhalte:&nbsp;
-      <W4aLinkInternal text={name} url="/contact" />
-            , Design: J&uuml;rgen Boiselle&nbsp;
+            &copy;&nbsp;{new Date().getFullYear()}&nbsp;
+      <W4aLinkInternal text={name} url="/contact" />&nbsp;
       <a
         target="_blank"
         rel="license external nofollow noopener noreferrer"
@@ -24,7 +23,7 @@ function W4aFooterCopyright ({ name }) {
           src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png"
           loading="lazy"
           draggable="false"
-          title="Dieses Werk ist lizenziert unter einer Creative Commons Namensnennung - Nicht kommerziell - Keine Bearbeitungen - 4.0 International Lizenz."
+          title="This license enables reusers to copy and distribute the material in any medium or format in unadapted form only, for noncommercial purposes only, and only so long as attribution is given to the creator."
         />
       </a>
     </span>
