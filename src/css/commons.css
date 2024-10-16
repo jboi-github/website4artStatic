@@ -22,9 +22,7 @@ body {
   padding-top: 5vh;
   font-size: xxx-large;
   font-weight: lighter;
-  width: 80vw;
   margin-left: 10vw;
-  margin-right: 10vw;
 }
 
 /* Centralize footer copyright */
@@ -35,7 +33,7 @@ body {
 }
 
 /* Let header / footer links be in a line without bullets and spread over full width */
-.headerList, .footerList {
+.footerList {
   list-style-type: none;
   display: flex;
   justify-content: space-between;
@@ -46,14 +44,17 @@ body {
 }
 
 .headerList {
-  border-bottom: 1px solid var(--w4a-border);
+  list-style-type: none;
+  padding-inline-start: 0em;
+  margin-left: 10vw;
+  margin-right: 10vw;
 }
 
 .footerList {
   border-top: 1px solid var(--w4a-border);
 }
 
-.headerListItem, .footerListItem {
+.footerListItem {
   float: left;
 }
 

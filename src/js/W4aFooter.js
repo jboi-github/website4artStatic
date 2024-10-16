@@ -30,7 +30,7 @@ function W4aFooterCopyright ({ name }) {
   )
 }
 
-function W4aFooterLinks ({ instagram }) {
+function W4aFooterLinks () {
   return (
     <nav className="footerNav">
       <ul className="footerList">
@@ -39,11 +39,6 @@ function W4aFooterLinks ({ instagram }) {
             <W4aLinkInternal text={link.text} url={link.url} icon={link.icon} />
           </li>
         )}
-        {instagram > '' &&
-                    <li className="footerListItem">
-                      <W4aLinkExternal text="Instagram" url={instagram} icon="fab fa-instagram" />
-                    </li>
-        }
       </ul>
     </nav>
   )
@@ -52,7 +47,7 @@ function W4aFooterLinks ({ instagram }) {
 function W4aFooter ({ name, instagram }) {
   return (
     <footer className="footer">
-      <W4aFooterLinks instagram={instagram}/>
+      <W4aFooterLinks />
       <W4aFooterCopyright name={name} />
     </footer>
   )
@@ -67,8 +62,7 @@ W4aFooterLinks.propTypes = {
 }
 
 W4aFooter.propTypes = {
-  name: PropTypes.string.isRequired,
-  instagram: PropTypes.string.isRequired
+  name: PropTypes.string.isRequired
 }
 
 export default W4aFooter

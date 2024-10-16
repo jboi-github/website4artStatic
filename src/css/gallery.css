@@ -3,22 +3,27 @@
 */
 
 .gallery {
-  padding-top: 10em;
+  padding-top: 8vh;
 }
 
 /* Formatting boxes*/
 .galleryFigure {
   margin-bottom: 10vh;
+  margin-inline: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding-left: 10vw;
+  width: 80vw;
 }
 
 .galleryFigure > .galleryFigureImage {
-  height: 80vh;
-  width: 100%;
-  min-height: 0;
-  min-width: 0;
+  flex: 50%;
+  max-height: 80vh;
+  max-width: 50vw;
   object-fit: contain;
-  display: block;
-  margin: auto;
+  object-position: right;
+  margin-left: auto;
   /*
   box-shadow: 0.25vw 0.25vw 0.25vw var(--w4a-border);
   background-color: var(--w4a-background-secondary);
@@ -26,8 +31,11 @@
 }
 
 .galleryFigureCaption {
+  flex: 50%;
   font-size: small;
-  text-align: center;
+  text-align: right;
+  margin-top: auto;
+  padding-right: 1.5em;
 }
 
 /*

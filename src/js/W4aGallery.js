@@ -10,14 +10,6 @@ function W4aGalleryPicture ({ pic: { full, square, title, year, size, material, 
 
   return (
     <figure className="galleryFigure">
-      <img
-        id={full}
-        src={getGalleryImage(full, srcSet ? '200' : 'original')}
-        alt={title}
-        loading="lazy"
-        draggable="false"
-        className="galleryFigureImage"
-      />
       {(title || year || size || material || story) &&
                 <figcaption className="galleryFigureCaption">
                   <p className="galleryFigureCaptionDetails">
@@ -32,6 +24,14 @@ function W4aGalleryPicture ({ pic: { full, square, title, year, size, material, 
                   {story && <p className="galleryFigureCaptionStory">{story}</p>}
                 </figcaption>
       }
+      <img
+        id={full}
+        src={getGalleryImage(full, srcSet ? '200' : 'original')}
+        alt={title}
+        loading="lazy"
+        draggable="false"
+        className="galleryFigureImage"
+      />
     </figure>
   )
 }

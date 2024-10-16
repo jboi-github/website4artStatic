@@ -21,6 +21,8 @@
   display: none;
 }
 
+/*
 nav .linkInternal::before, nav .linkExternal::before, form .contactFormSubmit::before, form .contactFormReset::before {
   content: "//";
 }
+*/

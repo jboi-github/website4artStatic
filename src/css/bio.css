@@ -4,19 +4,16 @@
 
 /* Indent Bio */
 .bio {
-  padding-left: 10vw;
+  padding-left: 30vw;
   padding-right: 10vw;
-  margin: 0 auto;
-  padding-top: 10em;
+  padding-top: 8vh;
 }
   
   /* Make titles more visible */
   .bioQuotesTitle, .bioExhibitionsTitle, .bioCurrentsTitle, .bioUpcomingsTitle, .bioPositionsTitle {
     margin-top: 1em;
     margin-bottom: 0.25em;
-    font-size: xx-large;
-    font-weight: lighter;
-    font-variant: small-caps;
+    font-weight: bold;
   }
   
   /* Make quotes italic */
@@ -29,7 +26,7 @@
   }
   
   /* Make names more visible */
-  .bioCurrentsName, .bioUpcomingsName, .bioPositionsDate, .bioExhibitionsDate, .bioUpcomingsDate {
+  .bioCurrentsName, .bioUpcomingsName, .bioPositionsDate, .bioExhibitionsDate, .bioExhibitionsFirstDate, .bioUpcomingsDate {
     font-weight: bold;
   }
   

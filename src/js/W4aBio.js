@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 function W4aCurrents ({ currents }) {
   return (
     <div className="bioCurrents">
-      <h2 className="bioCurrentsTitle">Laufende Ausstellung</h2>
+      <h2 className="bioCurrentsTitle">Current events</h2>
       {currents.map((current) =>
         <p className="bioCurrentsText" key={current.name}>
           <span className="bioCurrentsName">{current.name}</span><br />
@@ -23,7 +23,7 @@ function W4aCurrents ({ currents }) {
 function W4aPositions ({ positions }) {
   return (
     <div className="bioPositions">
-      <h2 className="bioPositionsTitle">Vita</h2>
+      <p className="bioPositionsTitle">Education</p>
       <table>
         <tbody>
           {positions.map((position) =>
@@ -41,7 +41,7 @@ function W4aPositions ({ positions }) {
 function W4aUpcomings ({ upcomings }) {
   return (
     <div className="bioUpcomings">
-      <h2 className="bioUpcomingsTitle">Upcoming</h2>
+      <p className="bioUpcomingsTitle">Upcoming</p>
       {upcomings.map((upcoming) =>
         <p className="bioUpcomingsText" key={upcoming.description}>
           {upcoming.date && <span className="bioUpcomingsDate">{upcoming.date}&nbsp;</span>}
@@ -56,10 +56,10 @@ function W4aUpcomings ({ upcomings }) {
 function W4aExhibitions ({ exhibitions }) {
   return (
     <div className="bioExhibitions">
-      <h2 className="bioExhibitionsTitle">Exhibitions (selection)</h2>
-      {exhibitions.map((exhibition) =>
+      <p className="bioExhibitionsTitle">Exhibitions (selection)</p>
+      {exhibitions.map((exhibition, index) =>
         <p className="bioExhibitionsText" key={exhibition.description}>
-          {exhibition.date && <div className="bioExhibitionsDate">{exhibition.date}</div>}
+          {exhibition.date && <div className={index === 0 ? "bioExhibitionsFirstDate" : "bioExhibitionsDate"}>{exhibition.date}</div>}
           {exhibition.description}
           {exhibition.link && <><br /><W4aLinkExternal text={exhibition.link} url={exhibition.link} /></>}
         </p>
@@ -71,7 +71,7 @@ function W4aExhibitions ({ exhibitions }) {
 function W4aSponsorships ({ sponsorships }) {
   return (
     <div className="bioExhibitions">
-      <h2 className="bioExhibitionsTitle">Grants</h2>
+      <p className="bioExhibitionsTitle">Grants</p>
       {sponsorships.map((sponsorship) =>
         <p className="bioExhibitionsText" key={sponsorship.description}>
           <span className="bioExhibitionsDate">{sponsorship.date}</span><br />
@@ -86,7 +86,7 @@ function W4aSponsorships ({ sponsorships }) {
 function W4aPublications ({ publications }) {
   return (
     <div className="bioExhibitions">
-      <h2 className="bioExhibitionsTitle">Publications</h2>
+      <p className="bioExhibitionsTitle">Publications</p>
       {publications.map((publication) =>
         <p className="bioExhibitionsText" key={publication.description}>
           <span className="bioExhibitionsDate">{publication.date}</span><br />
@@ -101,12 +101,26 @@ function W4aPublications ({ publications }) {
 function W4aQuotes ({ quotes }) {
   return (
     <div className="bioQuotes">
-      <h2 className="bioQuotesTitle">Publications</h2>
+      <p className="bioQuotesTitle">Publications</p>
       {quotes.map((quote) =>
         <p className="bioQuotesText" key={quote.quote}>
           <span className="bioQuotesQuote">{quote.quote}</span><br />
           {quote.source}<br />
           {quote.link && <W4aLinkExternal text={quote.link} url={quote.link}/>}
+        </p>
+      )}
+    </div>
+  )
+}
+
+function W4aContacts ({ contacts }) {
+  return (
+    <div className="bioExhibitions" id="contacts">
+      <p className="bioExhibitionsTitle">Contact</p>
+      {contacts.map((contact) =>
+        <p className="bioExhibitionsText" key={contact.type}>
+          {contact.type}:&nbsp;
+          {contact.link && <W4aLinkExternal text={contact.name} url={contact.link}/>}
         </p>
       )}
     </div>
@@ -127,6 +141,7 @@ function W4aBio () {
       {profile.bio.sponsorships && <W4aSponsorships sponsorships={profile.bio.sponsorships} />}
       {profile.bio.publications && <W4aPublications publications={profile.bio.publications} />}
       {profile.bio.quotes && <W4aQuotes quotes={profile.bio.quotes} />}
+      {profile.contacts && <W4aContacts contacts={profile.contacts} />}
     </div>
   )
 }

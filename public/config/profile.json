@@ -3,12 +3,20 @@
     "impressum": {
         "name": "Marie Boiselle",
         "umsatzSteuerNr": "46/026/03003",
-        "wirtschaftsId": "---",
-        "instagramLink": "https://instagram.com/_marieboiselle",
-        "instagramName": "_marieboiselle",
-        "emailLink": "mailto:contact@marieboiselle.com",
-        "emailName": "contact@marieboiselle.com"
+        "wirtschaftsId": "---"
     },
+    "contacts": [
+        {
+            "type": "email",
+            "link": "mailto:contact@marieboiselle.com",
+            "name": "contact@marieboiselle.com"
+        },
+        {
+            "type": "instagram",
+            "link": "https://instagram.com/_marieboiselle",
+            "name": "_marieboiselle"
+        }
+    ],
     "bio": {
         "born": "",
         "positions": [
@@ -37,7 +45,7 @@
         "upcoming": [
             {
                 "description": "Galerie Rundgaenger, Frankfurt",
-                "date": "October 2024",
+                "date": "2024",
                 "link": ""
             }
         ],

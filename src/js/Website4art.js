@@ -7,7 +7,6 @@ import W4aHeader from './W4aHeader'
 import W4aFooter from './W4aFooter'
 import W4aGallery from './W4aGallery'
 import W4aBio from './W4aBio'
-import W4aContact from './W4aContact'
 import W4aPrivacy from './W4aPrivacy'
 import W4aImpressum from './W4aImpressum'
 import { loadProfile, emptyProfile } from './api'
@@ -28,7 +27,6 @@ function Website4art () {
         <Route path="/" element={<W4aGallery/>} />
         <Route path="/gallery" element={<W4aGallery/>} />
         <Route path="/bio" element={<W4aBio/>} />
-        <Route path="/contact" element={<W4aContact/>} />
         <Route path="/impressum" element={<W4aImpressum/>} />
         <Route path="/impressions" element={<W4aImpressions/>} />
         <Route path="/privacy" element={<W4aPrivacy/>} />
