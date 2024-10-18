@@ -33,7 +33,6 @@ function Website4art () {
       </Routes>
       <W4aFooter
         name={profile.impressum.name}
-        instagram={profile.impressum.instagram}
       />
     </div>
   )

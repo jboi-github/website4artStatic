@@ -19,6 +19,7 @@ body {
 
 /* Centralize and size header title */
 .headerTitle {
+  background-color: var(--w4a-background-primary);
   padding-top: 5vh;
   font-size: xxx-large;
   font-weight: lighter;
@@ -66,7 +67,6 @@ body {
 }
 
 .header {
-  background-color: var(--w4a-background-primary);
   margin-bottom: 0.5em;
   position: fixed;
   top: 0;

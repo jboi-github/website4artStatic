@@ -12,9 +12,8 @@ function W4aGalleryPicture ({ pic: { full, square, title, year, size, material, 
     <figure className="galleryFigure">
       {(title || year || size || material || story) &&
                 <figcaption className="galleryFigureCaption">
-                  <p className="galleryFigureCaptionDetails">
-                    {title && <h1 className="galleryFigureCaptionTitle">{title}</h1>}
-                    {size && ', '}
+                    {title && <p className="galleryFigureCaptionDetails galleryFigureCaptionTitle">{title}</p>}
+                    <p className="galleryFigureCaptionDetails">
                     {size && size}
                     {material && ', '}
                     {material && material}

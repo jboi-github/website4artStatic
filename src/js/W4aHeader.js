@@ -4,8 +4,8 @@ import PropTypes from 'prop-types'
 
 const links = [
   { id: 1, text: 'Work', icon: 'fas fa-home', url: '/gallery' },
-  { id: 2, text: 'CV', icon: 'fas fa-calendar-alt', url: '/bio' },
-  { id: 3, text: 'Contact', icon: 'fas fa-comments', url: '/contacts' }
+  { id: 2, text: 'CV', icon: 'fas fa-calendar-alt', url: '/bio/?scrollToTop=true' },
+  { id: 3, text: 'Contact', icon: 'fas fa-comments', url: '/bio/?scrollToBottom=true' }
 ]
 
 function W4aHeaderTitle ({ name }) { return (<h1 className="headerTitle">{name}</h1>) }

@@ -1,6 +1,5 @@
 import React from 'react'
 import W4aLinkInternal from './W4aLinkInternal'
-import W4aLinkExternal from './W4aLinkExternal'
 import PropTypes from 'prop-types'
 
 const linksInternal = [
@@ -13,7 +12,7 @@ function W4aFooterCopyright ({ name }) {
   return (
     <span className="footerCopyright">
             &copy;&nbsp;{new Date().getFullYear()}&nbsp;
-      <W4aLinkInternal text={name} url="/contact" />&nbsp;
+      <W4aLinkInternal text={name} url="/bio/?scrollToBottom=true" />&nbsp;
       <a
         target="_blank"
         rel="license external nofollow noopener noreferrer"
@@ -44,7 +43,7 @@ function W4aFooterLinks () {
   )
 }
 
-function W4aFooter ({ name, instagram }) {
+function W4aFooter ({ name }) {
   return (
     <footer className="footer">
       <W4aFooterLinks />
@@ -55,10 +54,6 @@ function W4aFooter ({ name, instagram }) {
 
 W4aFooterCopyright.propTypes = {
   name: PropTypes.string.isRequired
-}
-
-W4aFooterLinks.propTypes = {
-  instagram: PropTypes.string.isRequired
 }
 
 W4aFooter.propTypes = {

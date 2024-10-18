@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom';
 import W4aLinkExternal from './W4aLinkExternal'
-import { loadProfile, emptyProfile, setHeaderFooterScrollTarget } from './api'
+import { loadProfile, emptyProfile, setHeaderFooterScrollTarget, scrollToBottom } from './api'
 import PropTypes from 'prop-types'
 
 function W4aCurrents ({ currents }) {
@@ -58,11 +59,13 @@ function W4aExhibitions ({ exhibitions }) {
     <div className="bioExhibitions">
       <p className="bioExhibitionsTitle">Exhibitions (selection)</p>
       {exhibitions.map((exhibition, index) =>
-        <p className="bioExhibitionsText" key={exhibition.description}>
-          {exhibition.date && <div className={index === 0 ? "bioExhibitionsFirstDate" : "bioExhibitionsDate"}>{exhibition.date}</div>}
-          {exhibition.description}
-          {exhibition.link && <><br /><W4aLinkExternal text={exhibition.link} url={exhibition.link} /></>}
-        </p>
+        <div key={exhibition.description}>
+          {exhibition.date && <p className={index === 0 ? "bioExhibitionsText bioExhibitionsFirstDate" : "bioExhibitionsText bioExhibitionsDate"}>{exhibition.date}</p>}
+          <p className="bioExhibitionsText">
+            {exhibition.description}
+            {exhibition.link && <><br /><W4aLinkExternal text={exhibition.link} url={exhibition.link} /></>}
+          </p>
+        </div>
       )}
     </div>
   )
@@ -129,11 +132,13 @@ function W4aContacts ({ contacts }) {
 
 function W4aBio () {
   const [profile, setProfile] = useState(emptyProfile)
+  const location = useLocation()
   useEffect(() => { loadProfile(setProfile) }, []) // Run once
   useEffect(() => { setHeaderFooterScrollTarget(false) }, []) // Run once
+  useEffect(() => { scrollToBottom(new URLSearchParams(location.search)) }, [location]) // Run when url changes
 
   return (
-    <div className="bio">
+    <div className="bio" id="positions">
       {profile.bio.current && <W4aCurrents currents={profile.bio.current} />}
       {profile.bio.positions && <W4aPositions positions={profile.bio.positions} />}
       {profile.bio.upcoming && <W4aUpcomings upcomings={profile.bio.upcoming} />}
@@ -158,10 +163,8 @@ W4aCurrents.propTypes = {
 
 W4aUpcomings.propTypes = {
   upcomings: PropTypes.arrayOf(PropTypes.exact({
-    name: PropTypes.string.isRequired,
-    place: PropTypes.string.isRequired,
     date: PropTypes.string,
-    time: PropTypes.string,
+    description: PropTypes.string,
     link: PropTypes.string
   })).isRequired
 }

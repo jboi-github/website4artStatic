@@ -116,3 +116,29 @@ export function setHeaderFooterScrollTarget (isTarget) {
   setOne('header', isTarget)
   setOne('footer', isTarget)
 }
+
+/* Scroll down to end of page */
+export async function scrollToBottom(params) {
+  if (params.get("scrollToBottom")) {
+    console.log("scrollToBottom")
+    const element = await getElementByIdAsync('contacts')
+    element.scrollIntoView({behavior: "smooth"})
+  } 
+  if (params.get("scrollToTop")) {
+    console.log("scrollToTop")
+    const element = await getElementByIdAsync('positions')
+    element.scrollIntoView({behavior: "smooth"})
+  } 
+}
+
+const getElementByIdAsync = id => new Promise(resolve => {
+  const getElement = () => {
+    const element = document.getElementById(id);
+    if(element) {
+      resolve(element);
+    } else {
+      requestAnimationFrame(getElement);
+    }
+  };
+  getElement();
+});
