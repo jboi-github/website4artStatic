@@ -15,9 +15,9 @@ function W4aGalleryPicture ({ pic: { full, square, title, year, size, material, 
                     {title && <p className="galleryFigureCaptionDetails galleryFigureCaptionTitle">{title}</p>}
                     <p className="galleryFigureCaptionDetails">
                     {size && size}
-                    {material && ', '}
+                    {size && material && ', '}
                     {material && material}
-                    {year && ', '}
+                    {material && year && ', '}
                     {year && year}
                   </p>
                   {story && <p className="galleryFigureCaptionStory">{story}</p>}

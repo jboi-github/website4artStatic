@@ -24,10 +24,6 @@
   object-fit: contain;
   object-position: right;
   margin-left: auto;
-  /*
-  box-shadow: 0.25vw 0.25vw 0.25vw var(--w4a-border);
-  background-color: var(--w4a-background-secondary);
-  */
 }
 
 .galleryFigureCaption {
@@ -38,52 +34,14 @@
   padding-right: 1.5em;
 }
 
-/*
-@media screen and (hover: hover) {
-  .galleryFigureCaption {
-    opacity: 0.75;
-    transition: opacity 0.5s ease-in-out;
-  }
-  .galleryFigureCaption:hover {
-    opacity: 1;
+@media screen and (orientation: portrait) {
+  .gallery {
+      padding-top: 30vh;
   }
 }
-*/
-.galleryFigureCaptionTitle {
+
+  .galleryFigureCaptionTitle {
   display: inline;
   font-size: medium;
   font-weight: lighter;
 }
-
-/* Sizing boxes */
-/*
-.galleryFigure {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.galleryFigureImage {
-  flex-grow: 1;
-  flex-shrink: 1;
-}
-
-.galleryFigureCaption {
-  flex-grow: 0;
-  flex-shrink: 0;
-}
-*/
-
-/* Scroll behavior */
-/* More bugs then features...
-html {
-  scroll-snap-type: y mandatory;
-}
-body { 
-  scroll-snap-type: y mandatory;
-}
-.galleryFigure, .scrollTarget  {
-  overflow: hidden;
-  scroll-snap-align: center;
-}
-*/

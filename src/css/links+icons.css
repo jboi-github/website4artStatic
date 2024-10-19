@@ -24,6 +24,7 @@
 
 /* Links (external and internal) will use normal color when not hovered. When hovered they turn darkgrey */
 .linkExternal, .linkInternal {
+  background-color: var(--w4a-background-primary);
   text-decoration: none;
   color: inherit;
 }

@@ -85,6 +85,8 @@ body {
 
 /* Das Kleingedruckte */
 .lawtext {
+  padding-left: 30vw;
+  padding-right: 10vw;
+  padding-top: 8vh;
   font-size: smaller;
-  padding: 0 5vw;
 }

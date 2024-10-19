@@ -16,7 +16,7 @@ function W4aImpressum () {
         <p>Angaben gem&auml;&szlig; &sect; 5 TMG</p>
       </header>
       <h2>
-        <W4aLinkInternal url="/contact" text={'Vertreten durch ' + profile.impressum.name} icon="fas fa-comments" />
+        <W4aLinkInternal url="/bio/?scrollToBottom=true" text={'Vertreten durch ' + profile.impressum.name} icon="fas fa-comments" />
       </h2>
       <h3>Umsatzsteuer-ID:</h3>
       <ul>
