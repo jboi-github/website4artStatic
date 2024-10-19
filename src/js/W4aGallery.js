@@ -23,6 +23,7 @@ function W4aGalleryPicture ({ pic: { full, square, title, year, size, material, 
                   {story && <p className="galleryFigureCaptionStory">{story}</p>}
                 </figcaption>
       }
+      <a href={getGalleryImage(full, 'original')}>
       <img
         id={full}
         src={getGalleryImage(full, srcSet ? '200' : 'original')}
@@ -31,6 +32,7 @@ function W4aGalleryPicture ({ pic: { full, square, title, year, size, material, 
         draggable="false"
         className="galleryFigureImage"
       />
+      </a>
     </figure>
   )
 }
