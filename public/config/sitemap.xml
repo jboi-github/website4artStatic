@@ -3,60 +3,140 @@
 		xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.marieboiselle.com/gallery</loc>
-    <lastmod>2021-01-17</lastmod>
+    <lastmod>2025-05-02</lastmod>
     <changefreq>weekly</changefreq>
     <image:image>
-      <image:loc>https://www.marieboiselle.com/gallery/800/2020-2.jpg</image:loc>
-      <image:caption>Lack, Öl</image:caption>
+      <image:loc>https://www.marieboiselle.com/gallery/800/picture2025050203.jpg</image:loc>
+      <image:caption>Acrylic and lacquer on canvas</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://www.marieboiselle.com/gallery/800/2020-1.jpg</image:loc>
-      <image:caption>Lack, Öl</image:caption>
+      <image:loc>https://www.marieboiselle.com/gallery/800/picture2025050204.jpg</image:loc>
+      <image:caption>Acrylic and lacquer on canvas</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://www.marieboiselle.com/gallery/800/2020Malerei_D.jpg</image:loc>
-      <image:title>DSC0067</image:title>
-      <image:caption>Acryl, Lack auf Leinwand</image:caption>
+      <image:loc>https://www.marieboiselle.com/gallery/800/picture2025050205.jpg</image:loc>
+      <image:caption>Acrylic and oil on canvas</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://www.marieboiselle.com/gallery/800/2020Malerei_3.jpg</image:loc>
-      <image:title>Mimi x Winnie</image:title>
-      <image:caption>Acryl, Lack, Spray, Öl auf Leinwand</image:caption>
+      <image:loc>https://www.marieboiselle.com/gallery/800/picture2025050201.jpg</image:loc>
+      <image:caption>Acrylic and lacquer and oil on canvas</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://www.marieboiselle.com/gallery/800/2020Malerei_A.jpg</image:loc>
-      <image:caption>Lack auf Leinwand</image:caption>
+      <image:loc>https://www.marieboiselle.com/gallery/800/picture2025050202.jpg</image:loc>
+      <image:caption>Acrylic and lacquer and oil on canvas</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://www.marieboiselle.com/gallery/800/2020Malerei_2.jpg</image:loc>
-      <image:caption>Lack, Öl auf Leinwand</image:caption>
+      <image:loc>https://www.marieboiselle.com/gallery/800/page07.jpg</image:loc>
+      <image:caption>Acrylic and lacquer on canvas</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://www.marieboiselle.com/gallery/800/2020Malerei_9.jpg</image:loc>
-      <image:title>51.272553, 15.041750</image:title>
-      <image:caption>Lack, Acryl auf Leinwand</image:caption>
+      <image:loc>https://www.marieboiselle.com/gallery/800/page01.jpg</image:loc>
+      <image:caption>Oil and acrylic on canvas</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://www.marieboiselle.com/gallery/800/P_MG_8377.jpg</image:loc>
-      <image:title>010100000110111101110010011 011100110111101100011011000 11011010000110100101101111</image:title>
-      <image:caption>Acryl, Lack, Binder, Öl auf Leinwand</image:caption>
+      <image:loc>https://www.marieboiselle.com/gallery/800/page02.jpg</image:loc>
+      <image:caption>Acrylic on canvas</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://www.marieboiselle.com/gallery/800/P_MG_8388.jpg</image:loc>
-      <image:caption>Acryl, Öl, Lack, Spray auf Leinwand und Holz</image:caption>
+      <image:loc>https://www.marieboiselle.com/gallery/800/page03.jpg</image:loc>
+      <image:caption>Acrylic on canvas</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://www.marieboiselle.com/gallery/800/P_MG_8386.jpg</image:loc>
-      <image:caption>Öl, Pigmente, Binder, Lack auf Leinwand und Holz</image:caption>
+      <image:loc>https://www.marieboiselle.com/gallery/800/page04.jpg</image:loc>
+      <image:caption>Acrylic on canvas</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://www.marieboiselle.com/gallery/800/R4C1.jpg</image:loc>
-      <image:caption>Öl auf Pappe</image:caption>
+      <image:loc>https://www.marieboiselle.com/gallery/800/page05.jpg</image:loc>
+      <image:caption>Acrylic and oil on canvas</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/gallery/800/page06.jpg</image:loc>
+      <image:caption>Lithography</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/gallery/800/page08.jpg</image:loc>
+      <image:caption>Acrylic on canvas</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/gallery/800/page09.jpg</image:loc>
+      <image:caption>Acrylic on canvas</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/gallery/800/page10.jpg</image:loc>
+      <image:caption>Acrylic and lacquer on canvas</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/gallery/800/page11.jpg</image:loc>
+      <image:caption>Acrylic and lacquer on canvas</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/gallery/800/page12.jpg</image:loc>
+      <image:caption>Acrylic and lacquer on canvas</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/gallery/800/page13.jpg</image:loc>
+      <image:caption>Acrylic and lacquer on canvas</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/gallery/800/page14.jpg</image:loc>
+      <image:caption>Acrylic on canvas</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/gallery/800/page15.jpg</image:loc>
+      <image:caption>Acrylic on canvas</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/gallery/800/page16.jpg</image:loc>
+      <image:caption>Oil, acrylic and lacquer on canvas</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/gallery/800/page17.jpg</image:loc>
+      <image:caption>Oil and lacquer on canvas</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/gallery/800/page18.jpg</image:loc>
+      <image:caption>Oil and lacquer on canvas</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/gallery/800/page19.jpg</image:loc>
+      <image:caption>Oil and lacquer on canvas</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/gallery/800/page20.jpg</image:loc>
+      <image:caption>Oil, acrylic and lacquer on canvas</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/gallery/800/page21.jpg</image:loc>
+      <image:caption>Oil, acrylic and lacquer on canvas</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/gallery/800/page22.jpg</image:loc>
+      <image:caption>Acrylic on canvas</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/gallery/800/page23.jpg</image:loc>
+      <image:caption>Acrylic on canvas</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/gallery/800/page24.jpg</image:loc>
+      <image:caption>Acrylic on canvas</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/gallery/800/page25.jpg</image:loc>
+      <image:caption>Acrylic on canvas</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/gallery/800/page26.jpg</image:loc>
+      <image:caption>Acrylic on canvas</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/gallery/800/page27.jpg</image:loc>
+      <image:caption>Acrylic on canvas</image:caption>
     </image:image>
   </url>
   <url>
     <loc>https://www.marieboiselle.com/impressions</loc>
-    <lastmod>2021-01-17</lastmod>
+    <lastmod>2025-05-02</lastmod>
     <changefreq>weekly</changefreq>
     <image:image>
       <image:loc>https://www.marieboiselle.com/impressions/800/1.jpg</image:loc>
@@ -132,6 +212,31 @@
     </image:image>
     <image:image>
       <image:loc>https://www.marieboiselle.com/impressions/800/25.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/impressions/800/2020Malerei_A.jpg</image:loc>
+      <image:caption>Lack auf Leinwand</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/impressions/800/2020Malerei_2.jpg</image:loc>
+      <image:caption>Lack, Öl auf Leinwand</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/impressions/800/P_MG_8377.jpg</image:loc>
+      <image:title>010100000110111101110010011 011100110111101100011011000 11011010000110100101101111</image:title>
+      <image:caption>Acryl, Lack, Binder, Öl auf Leinwand</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/impressions/800/P_MG_8388.jpg</image:loc>
+      <image:caption>Acryl, Öl, Lack, Spray auf Leinwand und Holz</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/impressions/800/P_MG_8386.jpg</image:loc>
+      <image:caption>Öl, Pigmente, Binder, Lack auf Leinwand und Holz</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marieboiselle.com/impressions/800/R4C1.jpg</image:loc>
+      <image:caption>Öl auf Pappe</image:caption>
     </image:image>
   </url>
 </urlset>
