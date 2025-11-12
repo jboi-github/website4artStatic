@@ -65,6 +65,9 @@ jobs:
               
               # Create sitemap.xml
               python < ./scripts/generate-sitemap.py > ./public/config/sitemap.xml
+
+              # rebuild brwoserlist
+              npx update-browserslist-db@latest
           EOF
 
       - name: Install OIDC Client from Core Package
