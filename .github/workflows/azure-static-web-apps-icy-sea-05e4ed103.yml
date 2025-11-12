@@ -9,6 +9,9 @@ on:
     branches:
       - marie
 
+env:
+  exif: Image-ExifTool-12.97
+
 jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
@@ -22,6 +25,48 @@ jobs:
         with:
           submodules: true
           lfs: false
+
+      - name: 'Setup environment on docker for Node(v10), Azure-CLI and Azure Functions'
+        shell: bash
+        run: |
+          docker build --tag website4art-python-images - <<-EOF
+            FROM python:latest
+
+            RUN apt-get update
+            RUN pip install --no-cache-dir Pillow
+
+            RUN curl --output ${{ env.exif }}.tar.gz https://exiftool.org/${{ env.exif }}.tar.gz
+            RUN gzip -dc ${{ env.exif }}.tar.gz | tar -xf -
+            RUN chmod +x ./${{ env.exif }}/exiftool
+          EOF
+
+          docker images
+
+          docker run \
+            --rm \
+            --interactive \
+            --volume ${PWD}:/usr/api \
+            --workdir /usr/api \
+            website4art-python-images \
+            /bin/bash -x <<-EOF
+              # Remove non-originals if exist
+              rm -r ./public/gallery/[0-9]*
+
+              # Drop metadata from images
+              /${{ env.exif }}/exiftool -r -ext "jpg" -overwrite_original -all= ./public/gallery
+              /${{ env.exif }}/exiftool -r -ext "jpg" -overwrite_original -all= ./public/impressions
+
+              # Resize images
+              python < ./scripts/resize.py
+
+              # Add metadata to images
+              /${{ env.exif }}/exiftool -r -ext "jpg" -overwrite_original -tagsfromfile ./public/config/metadata.xmp -xmp:all ./public/gallery
+              /${{ env.exif }}/exiftool -r -ext "jpg" -overwrite_original -tagsfromfile ./public/config/metadata.xmp -xmp:all ./public/impressions
+              
+              # Create sitemap.xml
+              python < ./scripts/generate-sitemap.py > ./public/config/sitemap.xml
+          EOF
+
       - name: Install OIDC Client from Core Package
         run: npm install @actions/core@1.6.0 @actions/http-client
       - name: Get Id Token
