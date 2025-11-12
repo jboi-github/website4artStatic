@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { emptyGallery, loadGallery, getGalleryImage, getGalleryVideo, getGallerySrcSet, setHeaderFooterScrollTarget } from './api'
+import { emptyGallery, loadGallery, getGalleryImage, getGallerySrcSet, setHeaderFooterScrollTarget } from './api'
 import PropTypes from 'prop-types'
 
 function W4aGalleryPicture ({ pic: { full, square, title, year, size, material, story, srcSet } }) {

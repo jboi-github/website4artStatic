@@ -71,6 +71,7 @@ export function getGalleryImage (name, size) {
 }
 
 /* Construct filename for gallery video */
+// eslint-disable-next-line no-unused-vars
 export function getGalleryVideo (name) {
   return `${process.env.PUBLIC_URL}/gallery/videos/${name}.mp4`
 }
