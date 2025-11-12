@@ -40,6 +40,13 @@ jobs:
             RUN chmod +x ./${{ env.exif }}/exiftool
           EOF
 
+          docker build --tag website4art-node - <<-EOF
+            FROM node:latest
+
+            RUN apt-get update
+            RUN apt-get install apt-transport-https
+          EOF
+
           docker images
 
           docker run \
@@ -66,8 +73,26 @@ jobs:
               # Create sitemap.xml
               python < ./scripts/generate-sitemap.py > ./public/config/sitemap.xml
           EOF
+          docker run \
+            --rm \
+            --interactive \
+            --volume ${PWD}:/usr/api \
+            --workdir /usr/api \
+            website4art-node \
+            /bin/bash -x <<-EOF
+              # Clean build directory
+              rm -r build
+    
+              # Node solve dependencies and build react
+              npm install
+              npm run build --if-present
+
+              # Check sizes
+              cd build
+              du -sk *
+          EOF
         
-      - name: 'rebuild brwoserlist'
+      - name: 'rebuild browserlist'
         run: npx update-browserslist-db@latest
 
       - name: Install OIDC Client from Core Package
