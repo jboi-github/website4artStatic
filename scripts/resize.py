@@ -8,8 +8,8 @@ SIZES = [5000, 3000, 2000, 1600, 800, 200]
 def resize(dir, fname, size):
 	''' Read, resize and save image in gallery '''
 	print('{} -> {}'.format(fname, size), end='')
-	finName = './public/{}/original/{}.jpg'.format(dir, fname)
-	foutDir = './public/{}/{}'.format(dir, size)
+	finName = './media/{}/original/{}.jpg'.format(dir, fname)
+	foutDir = './media/{}/{}'.format(dir, size)
 	foutName = '{}/{}.jpg'.format(foutDir, fname)
 
 	with open(finName, "rb") as f:
