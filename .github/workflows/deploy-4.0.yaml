@@ -118,15 +118,14 @@ jobs:
               # cd build
               # du -sk *
           EOF
+          rm -rf node_modules
+          rm -rf package-lock.json
 
       - name: Clear cache
         run: npm cache clean --force
 
-      - name: Install OIDC Client from Core Package II
-        run: npm install @actions/http-client
-
-      - name: Install OIDC Client from Core Package I
-        run: npm install @actions/core@1.6.0
+      - name: Install OIDC Client from Core Package
+        run: npm install @actions/core@1.6.0 @actions/http-client
 
       - name: Get Id Token
         uses: actions/github-script@v6
