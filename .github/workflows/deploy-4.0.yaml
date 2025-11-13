@@ -1,0 +1,142 @@
+name: Azure Static Web Apps + Azure Storage Media CI/CD
+
+#
+# This workflow deploys 
+# the static portion of website4art to Azure Sgtatic Web Apps
+# and the media will be preapred / resized and uploaded to Azure Storage
+# after a successful push to marie-4.0 branch.
+#
+
+on:
+  push:
+    branches:
+      - marie-4.0
+
+env:
+  exif: Image-ExifTool-13.41
+
+jobs:
+  build_and_deploy_job:
+    runs-on: ubuntu-latest
+    name: Build and Deploy Job
+    permissions:
+       id-token: write
+       contents: read
+
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+          lfs: false
+
+      - name: 'Media: Setup environment on docker for Python, exiftool, Node.js and Azure-CLI'
+        shell: bash
+        run: |
+          docker build --tag website4art-python - <<-EOF
+            FROM python:latest
+
+            RUN apt-get update
+            RUN pip install --no-cache-dir Pillow
+
+            RUN curl --output ${{ env.exif }}.tar.gz https://exiftool.org/${{ env.exif }}.tar.gz
+            RUN gzip -dc ${{ env.exif }}.tar.gz | tar -xf -
+            RUN chmod +x ./${{ env.exif }}/exiftool
+          EOF
+
+          docker build --tag website4art-node-azure - <<-EOF
+            FROM node:latest
+
+            RUN apt-get update
+            RUN apt-get install apt-transport-https
+
+            RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
+          EOF
+
+          docker images
+
+          docker run \
+            --rm \
+            --interactive \
+            --volume ${PWD}:/usr/api \
+            --workdir /usr/api \
+            website4art-python \
+            /bin/bash -x <<-EOF
+              # Remove non-originals if exist
+              rm -r ./media/gallery/[0-9]*
+              rm -r ./media/impressions/[0-9]*
+
+              # Drop metadata from images
+              /${{ env.exif }}/exiftool -r -ext "jpg" -overwrite_original -all= ./media/gallery
+              /${{ env.exif }}/exiftool -r -ext "jpg" -overwrite_original -all= ./media/impressions
+
+              # Resize images
+              python < ./scripts/resize.py
+
+              # Add metadata to images
+              /${{ env.exif }}/exiftool -r -ext "jpg" -overwrite_original -tagsfromfile ./public/config/metadata.xmp -xmp:all ./media/gallery
+              /${{ env.exif }}/exiftool -r -ext "jpg" -overwrite_original -tagsfromfile ./public/config/metadata.xmp -xmp:all ./media/impressions
+              
+              # Create sitemap.xml
+              python < ./scripts/generate-sitemap.py > ./public/config/sitemap.xml
+          EOF
+
+          # Get conn-string
+          node > .connString <<-NODE
+            const js = ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
+            console.log(js["`git branch --show-current`"])
+          NODE
+
+          docker run \
+            --rm \
+            --interactive \
+            --volume ${PWD}:/usr/api \
+            --workdir /usr/api \
+            cd media
+            website4art-node-azure \
+            /bin/bash -x <<-EOF
+              # Upload to Azure
+              az storage blob upload-batch \
+                --overwrite \
+                --destination \\\$web \
+                --source .  \
+                --connection-string "`cat .connString`"
+
+              # Clean build directory
+              rm -r build
+    
+              # Node solve dependencies, rebuild browserlist and build react
+              npx update-browserslist-db@latest
+              npm install
+              npm run build --if-present
+
+              # Check sizes
+              cd build
+              du -sk *
+          EOF
+        
+      - name: Install OIDC Client from Core Package
+        run: npm install @actions/core@1.6.0 @actions/http-client
+
+      - name: Get Id Token
+        uses: actions/github-script@v6
+        id: idtoken
+        with:
+           script: |
+               const coredemo = require('@actions/core')
+               return await coredemo.getIDToken()
+           result-encoding: string
+
+      - name: Build And Deploy Site
+        id: builddeploy
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_ICY_SEA_05E4ED103 }}
+          action: "upload"
+          ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
+          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
+          app_location: "/" # App source code path
+          api_location: "" # Api source code path - optional
+          output_location: "build" # Built app content directory - optional
+          github_id_token: ${{ steps.idtoken.outputs.result }}
+          ###### End of Repository/Build Configurations ######

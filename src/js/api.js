@@ -3,6 +3,7 @@
  */
 // const baseHost = "http://localhost:7071"
 const baseHost = 'https://w4aapi.azurewebsites.net'
+const mediaUrl = 'https://w4amarie.z6.web.core.windows.net'
 
 const querystring = require('querystring')
 
@@ -67,13 +68,13 @@ export async function loadGallery (setGallery) {
 
 /* Construct filename for gallery */
 export function getGalleryImage (name, size) {
-  return `${process.env.PUBLIC_URL}/gallery/${size}/${name}.jpg`
+  return `${mediaUrl}/gallery/${size}/${name}.jpg`
 }
 
 /* Construct filename for gallery video */
 // eslint-disable-next-line no-unused-vars
 export function getGalleryVideo (name) {
-  return `${process.env.PUBLIC_URL}/gallery/videos/${name}.mp4`
+  return `${mediaUrl}/gallery/videos/${name}.mp4`
 }
 
 /* Construct srcset for gallery image */
@@ -93,7 +94,7 @@ export async function loadImpressions (setImpressions) {
 
 /* Construct filename for impressions */
 export function getImpressionsImage (name, size) {
-  return `${process.env.PUBLIC_URL}/impressions/${size}/${name}.jpg`
+  return `${mediaUrl}/impressions/${size}/${name}.jpg`
 }
 
 /* Construct srcset for impressions image */
