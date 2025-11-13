@@ -102,16 +102,16 @@ jobs:
                 --connection-string "`cat .connString`"
 
               # Clean build directory
-              rm -r build
+              # rm -r build
     
               # Node solve dependencies, rebuild browserlist and build react
               npx update-browserslist-db@latest
-              npm install
-              npm run build --if-present
+              # npm install
+              # npm run build --if-present
 
               # Check sizes
-              cd build
-              du -sk *
+              # cd build
+              # du -sk *
           EOF
         
       - name: Install OIDC Client from Core Package
