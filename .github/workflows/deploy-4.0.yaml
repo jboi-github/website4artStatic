@@ -92,7 +92,6 @@ jobs:
             --interactive \
             --volume ${PWD}:/usr/api \
             --workdir /usr/api \
-            cd media
             website4art-node-azure \
             /bin/bash -x <<-EOF
               # Upload to Azure
