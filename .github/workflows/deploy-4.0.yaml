@@ -6,6 +6,10 @@ name: Azure Static Web Apps + Azure Storage Media CI/CD
 # and the media will be preapred / resized and uploaded to Azure Storage
 # after a successful push to marie-4.0 branch.
 #
+# Setup a secret in Github (Repository -> Settings -> Secret -> new secret)
+# with the name AZURE_STORAGE_CONNECTION_STRING and value of the connection
+# string of your Azure storage (portal.azure.com -> your storage -> Access Keys)
+#
 
 on:
   push:
