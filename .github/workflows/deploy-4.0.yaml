@@ -30,9 +30,6 @@ jobs:
     steps:
       - name: 'Checkout'
         uses: actions/checkout@v3
-        with:
-          submodules: true
-          lfs: false
 
       - name: 'Media: Setup environment on docker for Python, exiftool, Node.js and Azure-CLI'
         shell: bash
