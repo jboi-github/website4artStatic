@@ -95,6 +95,9 @@ jobs:
             --workdir /usr/api \
             website4art-node-azure \
             /bin/bash -x <<-EOF
+
+              echo "`cat .connString`"
+              
               # Upload to Azure
               az storage blob upload-batch \
                 --overwrite \
