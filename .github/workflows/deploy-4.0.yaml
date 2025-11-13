@@ -102,7 +102,7 @@ jobs:
               # Upload to Azure
               az storage blob upload-batch \
                 --overwrite \
-                --destination \\\$web/media \
+                --destination \\\$web \
                 --source ./media  \
                 --connection-string "`cat .connString`"
 
