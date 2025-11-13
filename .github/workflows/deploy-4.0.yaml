@@ -110,7 +110,7 @@ jobs:
               # rm -r build
     
               # Node solve dependencies, rebuild browserlist and build react
-              npx update-browserslist-db@latest
+              # npx update-browserslist-db@latest
               # npm install
               # npm run build --if-present
 
