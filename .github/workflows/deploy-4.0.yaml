@@ -64,6 +64,8 @@ jobs:
             --workdir /usr/api \
             website4art-python \
             /bin/bash -x <<-EOF
+              echo ${{ env.AZURE_STORAGE_CONNECTION_STRING }}
+
               # Remove non-originals if exist
               rm -r ./media/gallery/[0-9]*
               rm -r ./media/impressions/[0-9]*
