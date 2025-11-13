@@ -85,7 +85,7 @@ jobs:
 
           # Get conn-string
           node > .connString <<-NODE
-            const js = ${{ env.AZURE_STORAGE_CONNECTION_STRING }};
+            const js = process.env.AZURE_STORAGE_CONNECTION_STRING;
             console.log(js["`git branch --show-current`"])
           NODE
 
