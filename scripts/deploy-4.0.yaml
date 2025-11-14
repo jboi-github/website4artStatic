@@ -1,10 +1,9 @@
 name: Azure Static Web Apps + Azure Storage Media CI/CD
 
 #
-# This workflow deploys 
-# the static portion of website4art to Azure Sgtatic Web Apps
-# and the media will be preapred / resized and uploaded to Azure Storage
-# after a successful push to marie-4.0 branch.
+# This workflow deploys the media of website4art.
+# It will be preapred / resized and uploaded to Azure Storage
+# after each successful push to marie-4.0 branch.
 #
 # Setup a secret in Github (Repository -> Settings -> Secret -> new secret)
 # with the name AZURE_STORAGE_CONNECTION_STRING and value of the connection
@@ -15,10 +14,6 @@ on:
   push:
     branches:
       - marie-4.0
-  pull_request:
-    types: [opened, synchronize, reopened, closed]
-    branches:
-      - marie-4.0
 
 env:
   exif: Image-ExifTool-13.41
@@ -26,12 +21,8 @@ env:
 
 jobs:
   build_and_deploy_job:
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
-    name: Build and Deploy Job
-    permissions:
-       id-token: write
-       contents: read
+    name: Build and Deploy Media Job
 
     steps:
       - name: 'Checkout'
@@ -40,7 +31,7 @@ jobs:
       - name: 'Media: Setup environment on docker for Python, exiftool, Node.js and Azure-CLI'
         shell: bash
         run: |
-          docker build --tag website4art-python - <<-EOF
+          docker build --tag website4art-python-exif - <<-EOF
             FROM python:latest
 
             RUN apt-get update
@@ -62,12 +53,15 @@ jobs:
 
           docker images
 
+      - name: 'Media: Strip and replace metadata and resize'
+        shell: bash
+        run: |
           docker run \
             --rm \
             --interactive \
             --volume ${PWD}:/usr/api \
             --workdir /usr/api \
-            website4art-python \
+            website4art-python-exif \
             /bin/bash -x <<-EOF
               echo ${{ env.AZURE_STORAGE_CONNECTION_STRING }}
 
@@ -90,6 +84,10 @@ jobs:
               python < ./scripts/generate-sitemap.py > ./public/config/sitemap.xml
           EOF
 
+      - name: 'Media: Upload to Azure Storage'
+        shell: bash
+        run: |
+
           # Get conn-string
           node > .connString <<-NODE
             const js = process.env.AZURE_STORAGE_CONNECTION_STRING;
@@ -110,58 +108,4 @@ jobs:
                 --destination \\\$web \
                 --source ./media  \
                 --connection-string "`cat .connString`"
-
-              # Clean build directory
-              # rm -r build
-    
-              # Node solve dependencies, rebuild browserlist and build react
-              # npx update-browserslist-db@latest
-              # npm install
-              # npm run build --if-present
-
-              # Check sizes
-              # cd build
-              # du -sk *
           EOF
-          rm -rf node_modules
-          rm -rf package-lock.json
-
-      - name: Clear cache
-        run: npm cache clean --force
-
-      - name: Install OIDC Client from Core Package
-        run: npm install @actions/core@1.6.0 @actions/http-client
-
-      - name: Get Id Token
-        uses: actions/github-script@v6
-        id: idtoken
-        with:
-           script: |
-               const coredemo = require('@actions/core')
-               return await coredemo.getIDToken()
-           result-encoding: string
-
-      - name: Build And Deploy Site
-        id: builddeploy
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_ICY_SEA_05E4ED103 }}
-          action: "upload"
-          ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
-          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "/" # App source code path
-          output_location: "build" # Built app content directory - optional
-          github_id_token: ${{ steps.idtoken.outputs.result }}
-          verbose: true  # Enable verbose logging
-          ###### End of Repository/Build Configurations ######
-
-  close_pull_request_job:
-    if: github.event_name == 'pull_request' && github.event.action == 'closed'
-    runs-on: ubuntu-latest
-    name: Close Pull Request Job
-    steps:
-      - name: Close Pull Request
-        id: closepullrequest
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          action: "close"

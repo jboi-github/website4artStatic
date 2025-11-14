@@ -3,7 +3,7 @@
  */
 // const baseHost = "http://localhost:7071"
 const baseHost = 'https://w4aapi.azurewebsites.net'
-const mediaUrl = 'https://w4amarie.z6.web.core.windows.net'
+const mediaUrl = 'https://media.marieboiselle.com'
 
 const querystring = require('querystring')
 
