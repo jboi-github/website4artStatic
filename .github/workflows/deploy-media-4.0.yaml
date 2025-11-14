@@ -1,4 +1,4 @@
-name: Azure Static Web Apps + Azure Storage Media CI/CD
+name: Azure Storage Media CI/CD
 
 #
 # This workflow deploys the media of website4art.
